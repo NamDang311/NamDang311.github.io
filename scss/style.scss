@@ -1,0 +1,24 @@
+$yellow: #ffe66d;
+$red: #ff6b6b;
+
+body {
+  background-color: $yellow;
+  width: 100%;
+  height: 100%;
+  display: relative;
+}
+
+.selection-wrapper {
+  display: flex;
+  position: absolute;
+  width:80vw;
+  justify-content: space-between;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.selection-blocks {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
