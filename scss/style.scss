@@ -1,11 +1,10 @@
-$yellow: #F0B67F;
+$yellow: #e7deaf;
 $red: #AE5D42;
-$grey: #D6D1B1;
-$orange: #b94b26;
+$orange: #fb754d;
 $green: #C7EFCF;
 $pale: #EEF5DB;
 $blue: #267884;
-
+$pink: #f1a89c;
 .align-mid {
     position: absolute;
     left: 50%;
@@ -16,12 +15,15 @@ $blue: #267884;
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
+h3 {
+   
+}
 body {
     background-color: $yellow;
     width: 100%;
     height: 100%;
     display: relative;
-    font-family: "Helvetica", sans-serif;
+    font-family:'Frontage Bold',Helvetica,sans-serif;
 }
 
 //********Splash
@@ -29,48 +31,52 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z: 9;
+    z-index: 999;
     top: 0;
-    background-color: $orange;
+//    background: url(../images/bg-block.png) repeat fixed center;
     #introTypo {
-        margin:60px auto;
-        width:80vw;
+        margin:20px auto;
+        width:50vw;
         position: relative;
     }
-    
-    #introTypo img {
-        width:100%;
-    }
+
+
     #credit {
         @extend .align-mid;
-        width:30vw;
-        position: absolute;
         bottom:5%;
-    }
-    #credit img {
-        width:100%;
+        
     }
     #startButton {
         cursor: pointer;
-        font-size: 2em;
+        font-size: 1.5em;
         color: white;
-        background-color: transparent;
-        bottom: 20%;
-        border-radius: 16px;
-        width: 400px;
-        height: 80px;
+        background-color: black;
+        bottom: 12%;
+        border-radius: 0px;
+        width: 320px;
+        height: 60px;
         text-decoration: none;
         border: none;
         @extend .shadow-1;
         @extend .align-mid;
     }
-    #stripe {
-        width:200px;
-        background-color: $blue;
-        height:100%;
-        position: absolute;
-        @extend .align-mid;
-    }
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(images/bg.jpg) no-repeat;
+    background-size: cover; 
 }
 
 //********Countries title

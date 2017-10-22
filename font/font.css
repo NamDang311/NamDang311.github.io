@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Frontage 3D';
+  src: url('Frontage3D.eot'); /* IE9 Compat Modes */
+  src: url('Frontage3D.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Frontage3D.woff') format('woff'), /* Modern Browsers */
+       url('Frontage3D.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Frontage3D.svg#16f3f3645add2ecc0fd2acec1d6d6e34') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Frontage Bold';
+  src: url('FrontageBold.eot'); /* IE9 Compat Modes */
+  src: url('FrontageBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('FrontageBold.woff') format('woff'), /* Modern Browsers */
+       url('FrontageBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('FrontageBold.svg#af61621a84035e3ac35ab277956086e2') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Frontage Bulb';
+  src: url('FrontageBulb.eot'); /* IE9 Compat Modes */
+  src: url('FrontageBulb.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('FrontageBulb.woff') format('woff'), /* Modern Browsers */
+       url('FrontageBulb.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('FrontageBulb.svg#1351a96b57d0b7d2db4f8d2a1d4aa22c') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Frontage Regular';
+  src: url('FrontageRegular.eot'); /* IE9 Compat Modes */
+  src: url('FrontageRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('FrontageRegular.woff') format('woff'), /* Modern Browsers */
+       url('FrontageRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('FrontageRegular.svg#e887d20c0b4e9a63de7c591f75463f64') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Frontage Shadow';
+  src: url('FrontageShadow.eot'); /* IE9 Compat Modes */
+  src: url('FrontageShadow.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('FrontageShadow.woff') format('woff'), /* Modern Browsers */
+       url('FrontageShadow.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('FrontageShadow.svg#3e5d40fe91fe71f325dcf4455fb7117b') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

@@ -7,9 +7,10 @@
     <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
     <!--[if IE]>
-      <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <![endif]-->
+        <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/font/font.css" rel="stylesheet" type="text/css" />
     <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -41,12 +42,16 @@
         <div class="selection-blocks incorrect">asdsad</div>
     </div>
 
+    <!--Splash Screen-->
     <div class="splashScreen">
-     
-       <div id="introTypo"><img src="images/intro.png" /></div>
-        <button id="startButton">START GAME</button>
-        <div id="credit"><img src="images/credit.png" alt=""></div>
-         <div id="stripe"></div>
+        <video playsinline autoplay muted loop poster="bg.jpg" id="bgvid">
+        <source src="images/bg.mp4" type="video/mp4">
+        </video>
+        <div id="introTypo"><img src="images/SVG/lookTitle.svg" /></div>
+        <button id="startButton">START</button>
+        <div id="credit">
+            <h3>Proudly presented by The Social Club</h3>
+        </div>
     </div>
 
 

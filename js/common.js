@@ -10,6 +10,10 @@ ref.on("value", function (snapshot) {
     console.log("Error: " + error.code);
 });
 
+//Opening
+$( document ).ready(function() {
+   TweenMax.fromTo("#introTypo",1,{scale:0,y:"+=300px"},{scale:1,y:"-=300px",delay:"2",ease: Power4.easeOut})
+});
 
 //Start the game
 $("#startButton").on("click touchstart", function (event) {
