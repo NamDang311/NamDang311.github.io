@@ -10,9 +10,18 @@ ref.on("value", function (snapshot) {
     console.log("Error: " + error.code);
 });
 
+
+//Start the game
+$("#startButton").on("click touchstart", function (event) {
+    TweenMax.staggerTo (".splashScreen, .splashScreen *",3,{y:"-=100%"},2);
+})
+
+
+
 function rungame() {
     pickRandom();
 }
+
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -28,7 +37,7 @@ function pickRandom() {
 }
 
 
-//Next round
+//****Next round trigger
 var correctTune = new Audio('../sound/correct.mp3');
 var incorrectTune = new Audio('../sound/correct.wav');
 $(".correct").on("click touchstart", function (event) {

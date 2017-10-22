@@ -1,8 +1,20 @@
 $yellow: #F0B67F;
-$red: #FE5F55;
+$red: #AE5D42;
 $grey: #D6D1B1;
-$green:#C7EFCF;
+$orange: #b94b26;
+$green: #C7EFCF;
 $pale: #EEF5DB;
+$blue: #267884;
+
+.align-mid {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.shadow-1 {
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+}
 
 body {
     background-color: $yellow;
@@ -10,7 +22,55 @@ body {
     height: 100%;
     display: relative;
     font-family: "Helvetica", sans-serif;
+}
 
+//********Splash
+.splashScreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z: 9;
+    top: 0;
+    background-color: $orange;
+    #introTypo {
+        margin:60px auto;
+        width:80vw;
+        position: relative;
+    }
+    
+    #introTypo img {
+        width:100%;
+    }
+    #credit {
+        @extend .align-mid;
+        width:30vw;
+        position: absolute;
+        bottom:5%;
+    }
+    #credit img {
+        width:100%;
+    }
+    #startButton {
+        cursor: pointer;
+        font-size: 2em;
+        color: white;
+        background-color: transparent;
+        bottom: 20%;
+        border-radius: 16px;
+        width: 400px;
+        height: 80px;
+        text-decoration: none;
+        border: none;
+        @extend .shadow-1;
+        @extend .align-mid;
+    }
+    #stripe {
+        width:200px;
+        background-color: $blue;
+        height:100%;
+        position: absolute;
+        @extend .align-mid;
+    }
 }
 
 //********Countries title
@@ -22,6 +82,7 @@ body {
 
 //********Countries thumbnails
 .selection-wrapper {
+    z: 1;
     display: flex;
     position: absolute;
     width: 80vw;
