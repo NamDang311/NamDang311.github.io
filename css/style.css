@@ -1,12 +1,20 @@
-/* line 5, ../scss/style.scss */
+/* line 7, ../scss/style.scss */
 body {
-  background-color: #ffe66d;
+  background-color: #F0B67F;
   width: 100%;
   height: 100%;
   display: relative;
+  font-family: "Helvetica", sans-serif;
 }
 
-/* line 12, ../scss/style.scss */
+/* line 17, ../scss/style.scss */
+#country-title {
+  margin: 100px auto;
+  text-align: center;
+  font-size: 8em;
+}
+
+/* line 24, ../scss/style.scss */
 .selection-wrapper {
   display: flex;
   position: absolute;
@@ -17,9 +25,10 @@ body {
   transform: translate(-50%, 0);
 }
 
-/* line 21, ../scss/style.scss */
+/* line 34, ../scss/style.scss */
 .selection-blocks {
+  cursor: pointer;
   width: 200px;
   height: 200px;
-  background-color: #ffe66d;
+  background-color: #C7EFCF;
 }
