@@ -1,4 +1,4 @@
-/* line 4, ../scss/style.scss */
+/* line 5, ../scss/style.scss */
 body {
   background-color: #ffe66d;
   width: 100%;
@@ -6,7 +6,7 @@ body {
   display: relative;
 }
 
-/* line 11, ../scss/style.scss */
+/* line 12, ../scss/style.scss */
 .selection-wrapper {
   display: flex;
   position: absolute;
@@ -17,9 +17,9 @@ body {
   transform: translate(-50%, 0);
 }
 
-/* line 20, ../scss/style.scss */
+/* line 21, ../scss/style.scss */
 .selection-blocks {
   width: 200px;
   height: 200px;
-  background-color: pink;
+  background-color: #ffe66d;
 }
