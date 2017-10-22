@@ -30,11 +30,14 @@ function pickRandom() {
 
 //Next round
 var correctTune = new Audio('../sound/correct.mp3');
+var incorrectTune = new Audio('../sound/correct.wav');
 $(".correct").on("click touchstart", function (event) {
     correctTune.play();
 })
+$(".incorrect").on("click touchstart", function (event) {
+    incorrectTune.play();
+})
 
-('.incorrect').not(':first');
 
 function changeTitle() {
     randomNumb = getRndInteger(0, 10);
@@ -43,3 +46,11 @@ function changeTitle() {
         scrambleText: setCountryTitle
     });
 }
+
+var Shuffle = window.Shuffle;
+
+var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
+  itemSelector: '.selection-blocks',
+  sizer: '.my-sizer-element',
+  buffer: 1,
+});
