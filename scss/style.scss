@@ -1,25 +1,39 @@
-$yellow: #ffe66d;
-$red: #ff6b6b;
-$black: #000000;
+$yellow: #F0B67F;
+$red: #FE5F55;
+$grey: #D6D1B1;
+$green:#C7EFCF;
+$pale: #EEF5DB;
 
 body {
-  background-color: $yellow;
-  width: 100%;
-  height: 100%;
-  display: relative;
+    background-color: $yellow;
+    width: 100%;
+    height: 100%;
+    display: relative;
+    font-family: "Helvetica", sans-serif;
+
 }
 
-.selection-wrapper {
-  display: flex;
-  position: absolute;
-  width:80vw;
-  justify-content: space-between;
-  bottom: 2%;
-  left: 50%;
-  transform: translate(-50%, 0);
+//********Countries title
+#country-title {
+    margin: 100px auto;
+    text-align: center;
+    font-size: 8em;
 }
+
+//********Countries thumbnails
+.selection-wrapper {
+    display: flex;
+    position: absolute;
+    width: 80vw;
+    justify-content: space-between;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 .selection-blocks {
-  width: 200px;
-  height: 200px;
-  background-color: $yellow;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    background-color: $green;
 }
