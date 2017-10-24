@@ -1,5 +1,5 @@
 var database = firebase.database();
-var path = "/0"
+var path = "/0";
 var ref = database.ref(path).child("outware");
 
 var nameArr = [];
@@ -11,16 +11,33 @@ ref.on("value", function (snapshot) {
 });
 
 //Opening
-$( document ).ready(function() {
-   TweenMax.fromTo("#introTypo",1,{scale:0,y:"+=300px"},{scale:1,y:"-=300px",delay:"2",ease: Power4.easeOut})
+$(document).ready(function () {
+    TweenMax.fromTo("#introTypo", 1, {
+        scale: 0,
+        y: "+=300px"
+    }, {
+        scale: 1,
+        y: "-=300px",
+        delay: "2",
+        ease: Power4.easeOut
+    });
 });
 
 //Start the game
 $("#startButton").on("click touchstart", function (event) {
-    TweenMax.staggerTo (".splashScreen, .splashScreen *",3,{y:"-=100%"},2);
-})
+    TweenMax.staggerTo(".splashScreen, .splashScreen *", 1, {
+        y: "-=100%"
+    }, 1);
+});
 
-
+var $grid = $('.grid').isotope({
+    getSortData: {
+        number: '.number'
+    },
+     layoutMode: 'fitRows',
+    sortBy: 'random'
+});
+$grid.isotope('updateSortData').isotope();
 
 function rungame() {
     pickRandom();
@@ -36,7 +53,7 @@ var randomNumb;
 
 function pickRandom() {
     randomNumb = getRndInteger(0, 10);
-    setCountryTitle = nameArr[0][randomNumb].country.toString()
+    setCountryTitle = nameArr[0][randomNumb].country.toString();
     $('#country-title').html(setCountryTitle);
 }
 
@@ -44,26 +61,27 @@ function pickRandom() {
 //****Next round trigger
 var correctTune = new Audio('../sound/correct.mp3');
 var incorrectTune = new Audio('../sound/correct.wav');
+
+//Shuffle randomly
+setInterval(function () {
+    $grid.isotope('updateSortData').isotope();
+    $('.grid').isotope({
+        sortBy: 'random'
+    });
+}, 1000);
+
 $(".correct").on("click touchstart", function (event) {
     correctTune.play();
-})
+});
 $(".incorrect").on("click touchstart", function (event) {
     incorrectTune.play();
-})
+});
 
 
 function changeTitle() {
     randomNumb = getRndInteger(0, 10);
-    setCountryTitle = nameArr[0][randomNumb].country.toString()
+    setCountryTitle = nameArr[0][randomNumb].country.toString();
     TweenLite.to("#country-title", 1, {
         scrambleText: setCountryTitle
     });
 }
-
-var Shuffle = window.Shuffle;
-
-var myShuffle = new Shuffle(document.querySelector('.my-shuffle'), {
-  itemSelector: '.selection-blocks',
-  sizer: '.my-sizer-element',
-  buffer: 1,
-});

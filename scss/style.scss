@@ -10,7 +10,7 @@ $pink: #f1a89c;
     left: 50%;
     transform: translate(-50%, 0);
 }
-
+ 
 .shadow-1 {
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
@@ -87,15 +87,12 @@ video#bgvid {
 }
 
 //********Countries thumbnails
-.selection-wrapper {
+.grid {
     z: 1;
-    display: flex;
-    position: absolute;
     width: 80vw;
-    justify-content: space-between;
     bottom: 2%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    @extend .align-mid;
+    text-align: center;
 }
 
 .selection-blocks {
@@ -103,4 +100,8 @@ video#bgvid {
     width: 200px;
     height: 200px;
     background-color: $green;
+    &:nth-child(1){
+        background-color: $orange;
+    }
 }
+
