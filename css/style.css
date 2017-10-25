@@ -1,5 +1,5 @@
 /* line 8, ../scss/style.scss */
-.align-mid, .splashScreen #credit, .splashScreen #startButton {
+.align-mid, .splashScreen #credit, .splashScreen #startButton, .grid {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -77,21 +77,21 @@ video#bgvid {
 }
 
 /* line 90, ../scss/style.scss */
-.selection-wrapper {
+.grid {
   z: 1;
-  display: flex;
-  position: absolute;
   width: 80vw;
-  justify-content: space-between;
   bottom: 2%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  text-align: center;
 }
 
-/* line 101, ../scss/style.scss */
+/* line 98, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
   height: 200px;
   background-color: #C7EFCF;
+}
+/* line 103, ../scss/style.scss */
+.selection-blocks:nth-child(1) {
+  background-color: #fb754d;
 }
