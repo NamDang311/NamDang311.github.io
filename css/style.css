@@ -1,5 +1,5 @@
 /* line 8, ../scss/style.scss */
-.align-mid, .splashScreen #credit, .splashScreen #startButton, .grid {
+.align-mid, .splashScreen #credit, .splashScreen #startButton {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -10,24 +10,26 @@
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* line 21, ../scss/style.scss */
+/* line 22, ../scss/style.scss */
 body {
   background-color: #e7deaf;
-  width: 100%;
-  height: 100%;
-  display: relative;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
   font-family: 'Frontage Bold',Helvetica,sans-serif;
+  overflow: hidden;
 }
 
-/* line 30, ../scss/style.scss */
+/* line 32, ../scss/style.scss */
 .splashScreen {
   width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: 999;
   top: 0;
+  visibility: hidden;
 }
-/* line 37, ../scss/style.scss */
+/* line 39, ../scss/style.scss */
 .splashScreen #introTypo {
   margin: 20px auto;
   width: 50vw;
@@ -37,7 +39,7 @@ body {
 .splashScreen #credit {
   bottom: 5%;
 }
-/* line 49, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 .splashScreen #startButton {
   cursor: pointer;
   font-size: 1.5em;
@@ -51,7 +53,7 @@ body {
   border: none;
 }
 
-/* line 65, ../scss/style.scss */
+/* line 64, ../scss/style.scss */
 video#bgvid {
   position: fixed;
   top: 50%;
@@ -69,29 +71,31 @@ video#bgvid {
   background-size: cover;
 }
 
-/* line 83, ../scss/style.scss */
+/* line 82, ../scss/style.scss */
 #country-title {
-  margin: 100px auto;
+  margin: 120px auto 240px auto;
   text-align: center;
   font-size: 8em;
 }
 
-/* line 90, ../scss/style.scss */
+/* line 89, ../scss/style.scss */
 .grid {
-  z: 1;
-  width: 80vw;
-  bottom: 2%;
+  width: 830px;
   text-align: center;
+  margin: 0 auto;
 }
 
-/* line 98, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
-  height: 200px;
-  background-color: #C7EFCF;
+  height: 160px;
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /* line 103, ../scss/style.scss */
 .selection-blocks:nth-child(1) {
-  background-color: #fb754d;
+  background-color: white;
 }

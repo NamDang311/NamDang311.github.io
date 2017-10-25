@@ -34,7 +34,11 @@ var $grid = $('.grid').isotope({
     getSortData: {
         number: '.number'
     },
-     layoutMode: 'fitRows',
+    layoutMode: 'fitRows',
+    fitRows: {
+        gutter: 10
+    },
+    transitionDuration: '0.2s',
     sortBy: 'random'
 });
 $grid.isotope('updateSortData').isotope();
@@ -62,13 +66,9 @@ function pickRandom() {
 var correctTune = new Audio('../sound/correct.mp3');
 var incorrectTune = new Audio('../sound/correct.wav');
 
-//Shuffle randomly
-setInterval(function () {
-    $grid.isotope('updateSortData').isotope();
-    $('.grid').isotope({
-        sortBy: 'random'
-    });
-}, 1000);
+//****Shuffle randomly
+
+
 
 $(".correct").on("click touchstart", function (event) {
     correctTune.play();
@@ -84,4 +84,15 @@ function changeTitle() {
     TweenLite.to("#country-title", 1, {
         scrambleText: setCountryTitle
     });
+}
+
+//Load correct image
+var collectionimg = ["russia","australia","india","south%20africa"]
+var currentimg = "vietnam";
+var correctsrc = "url(../images/flags/" + currentimg + ".png)";
+$(".correct").css("background-image", correctsrc);
+
+//Load random images
+for (var i = 1; i < $(".selection-blocks").length ; i++) {
+    $(".selection-blocks:eq("+ i +")").css("background-image", "url(../images/flags/" + collectionimg[i] + ".png)");
 }

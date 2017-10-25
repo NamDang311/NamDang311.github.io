@@ -18,12 +18,14 @@ $pink: #f1a89c;
 h3 {
    
 }
+
 body {
     background-color: $yellow;
-    width: 100%;
-    height: 100%;
-    display: relative;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
     font-family:'Frontage Bold',Helvetica,sans-serif;
+    overflow: hidden;
 }
 
 //********Splash
@@ -33,18 +35,15 @@ body {
     position: absolute;
     z-index: 999;
     top: 0;
-//    background: url(../images/bg-block.png) repeat fixed center;
+    visibility: hidden;
     #introTypo {
         margin:20px auto;
         width:50vw;
         position: relative;
     }
-
-
     #credit {
         @extend .align-mid;
-        bottom:5%;
-        
+        bottom:5%;   
     }
     #startButton {
         cursor: pointer;
@@ -81,27 +80,27 @@ video#bgvid {
 
 //********Countries title
 #country-title {
-    margin: 100px auto;
+    margin: 120px auto 240px auto;
     text-align: center;
     font-size: 8em;
 }
 
 //********Countries thumbnails
 .grid {
-    z: 1;
-    width: 80vw;
-    bottom: 2%;
-    @extend .align-mid;
+    width: 830px;
     text-align: center;
+    margin: 0 auto;
 }
 
 .selection-blocks {
     cursor: pointer;
     width: 200px;
-    height: 200px;
-    background-color: $green;
+    height: 160px;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     &:nth-child(1){
-        background-color: $orange;
+        background-color: white;
     }
 }
-
