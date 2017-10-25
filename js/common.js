@@ -67,8 +67,9 @@ var correctTune = new Audio('../sound/correct.mp3');
 var incorrectTune = new Audio('../sound/correct.wav');
 
 //****Shuffle randomly
+$grid.isotope('shuffle');
 
-
+//---
 
 $(".correct").on("click touchstart", function (event) {
     correctTune.play();
