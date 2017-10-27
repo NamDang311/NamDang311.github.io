@@ -10,25 +10,27 @@ $pink: #f1a89c;
     left: 50%;
     transform: translate(-50%, 0);
 }
- 
+
 .shadow-1 {
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-h3 {
-   
+h2 {
+    color: white;
+    font-size:2em;
+    text-align: center;
 }
 
 body {
     background-color: $yellow;
     width: 100vw;
     height: 100vh;
-    position: relative;
-    font-family:'Frontage Bold',Helvetica,sans-serif;
-    overflow: hidden;
+    font-family: 'Frontage Bold', Helvetica, sans-serif;
+    overflow: auto;
 }
 
-//********Splash
+/* ----- Splash screen ----- */
+
 .splashScreen {
     width: 100vw;
     height: 100vh;
@@ -37,13 +39,13 @@ body {
     top: 0;
     visibility: hidden;
     #introTypo {
-        margin:20px auto;
-        width:50vw;
+        margin: 20px auto;
+        width: 50vw;
         position: relative;
     }
     #credit {
         @extend .align-mid;
-        bottom:5%;   
+        bottom: 5%;
     }
     #startButton {
         cursor: pointer;
@@ -61,7 +63,7 @@ body {
     }
 }
 
-video#bgvid { 
+video#bgvid {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -75,32 +77,63 @@ video#bgvid {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background: url(images/bg.jpg) no-repeat;
-    background-size: cover; 
+    background-size: cover;
+    visibility: hidden;
 }
 
-//********Countries title
+/* ----- How to play ----- */
+
+.guide {
+    position: absolute;
+    top: 0;
+    background-color: $orange;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    h3{
+        text-align: center;
+        margin: 60px auto;
+    }
+    img {
+        cursor: pointer !important;
+        display: block;
+        width: 65vh;
+        margin:0 auto;
+    }
+}
+
+/* ----- Countries title ----- */
+
 #country-title {
-    margin: 80px auto 240px auto;
+    margin: 80px auto 140px auto;
     text-align: center;
     font-size: 8em;
 }
 
-//********Countries thumbnails
+/* ----- Countries thumbnails ----- */
+
 .grid {
+    display: block;
     width: 830px;
     text-align: center;
     margin: 0 auto;
 }
-
+.grid2 {
+    display: block;
+    width: 830px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: aqua;
+}
 .selection-blocks {
     cursor: pointer;
     width: 200px;
     height: 160px;
-    background-color: white;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    &:nth-child(1){
-        background-color: white;
-    }
+}
+
+.correct2 {
+    background-color: red;
 }

@@ -10,17 +10,24 @@
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* line 22, ../scss/style.scss */
+/* line 18, ../scss/style.scss */
+h2 {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* line 24, ../scss/style.scss */
 body {
   background-color: #e7deaf;
   width: 100vw;
   height: 100vh;
-  position: relative;
-  font-family: 'Frontage Bold',Helvetica,sans-serif;
-  overflow: hidden;
+  font-family: 'Frontage Bold', Helvetica, sans-serif;
+  overflow: auto;
 }
 
-/* line 32, ../scss/style.scss */
+/* ----- Splash screen ----- */
+/* line 34, ../scss/style.scss */
 .splashScreen {
   width: 100vw;
   height: 100vh;
@@ -29,17 +36,17 @@ body {
   top: 0;
   visibility: hidden;
 }
-/* line 39, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 .splashScreen #introTypo {
   margin: 20px auto;
   width: 50vw;
   position: relative;
 }
-/* line 44, ../scss/style.scss */
+/* line 46, ../scss/style.scss */
 .splashScreen #credit {
   bottom: 5%;
 }
-/* line 48, ../scss/style.scss */
+/* line 50, ../scss/style.scss */
 .splashScreen #startButton {
   cursor: pointer;
   font-size: 1.5em;
@@ -53,7 +60,7 @@ body {
   border: none;
 }
 
-/* line 64, ../scss/style.scss */
+/* line 66, ../scss/style.scss */
 video#bgvid {
   position: fixed;
   top: 50%;
@@ -69,33 +76,69 @@ video#bgvid {
   transform: translateX(-50%) translateY(-50%);
   background: url(images/bg.jpg) no-repeat;
   background-size: cover;
+  visibility: hidden;
 }
 
-/* line 82, ../scss/style.scss */
+/* ----- How to play ----- */
+/* line 86, ../scss/style.scss */
+.guide {
+  position: absolute;
+  top: 0;
+  background-color: #fb754d;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+/* line 93, ../scss/style.scss */
+.guide h3 {
+  text-align: center;
+  margin: 60px auto;
+}
+/* line 97, ../scss/style.scss */
+.guide img {
+  cursor: pointer !important;
+  display: block;
+  width: 65vh;
+  margin: 0 auto;
+}
+
+/* ----- Countries title ----- */
+/* line 107, ../scss/style.scss */
 #country-title {
-  margin: 80px auto 240px auto;
+  margin: 80px auto 140px auto;
   text-align: center;
   font-size: 8em;
 }
 
-/* line 89, ../scss/style.scss */
+/* ----- Countries thumbnails ----- */
+/* line 115, ../scss/style.scss */
 .grid {
+  display: block;
   width: 830px;
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 95, ../scss/style.scss */
+/* line 121, ../scss/style.scss */
+.grid2 {
+  display: block;
+  width: 830px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+/* line 128, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
   height: 160px;
-  background-color: white;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 103, ../scss/style.scss */
-.selection-blocks:nth-child(1) {
-  background-color: white;
+
+/* line 137, ../scss/style.scss */
+.correct2 {
+  background-color: red;
 }
