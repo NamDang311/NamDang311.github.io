@@ -1,3 +1,5 @@
+/** Apply Bigtext to titles */
+
 /** Database -> Set base for set 1/2 */
 var countries = ["Australia","Brazil","China","Germany","Great Britain","India","Iran","Kenya","New Zealand","Pakistan","Poland","Russia","South Africa","Ukraine","Vietnam"];
 var countriesShuffle = _.shuffle(countries);
@@ -39,22 +41,11 @@ var $grid = $('.grid').isotope({
 $grid.isotope('updateSortData').isotope();
 
 
-//Play sound when when select
-var correctTune = new Audio('../sound/correct.mp3');
-var incorrectTune = new Audio('../sound/correct.wav');
-
-$(".correct").on("click touchstart", function (event) {
-    correctTune.play();
-});
-$(".incorrect").on("click touchstart", function (event) {
-    incorrectTune.play();
-});
-
 //****Shuffle randomly
 //$grid.isotope('shuffle');
 
 //Load title
-$("#country-title").html(countriesA[0]);
+$(".country-title").html(countriesA[0]);
 
 
 

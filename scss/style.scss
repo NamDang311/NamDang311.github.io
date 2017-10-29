@@ -1,10 +1,20 @@
+/* ----- Colours ----- */
+
 $yellow: #e7deaf;
 $red: #AE5D42;
 $orange: #fb754d;
-$green: #C7EFCF;
+$green: #00C997;
 $pale: #EEF5DB;
 $blue: #267884;
 $pink: #f1a89c;
+
+/* ----- Settings ----- */
+
+$countryfontSize:5vw;
+
+
+/* ----- General ----- */
+
 .align-mid {
     position: absolute;
     left: 50%;
@@ -17,7 +27,7 @@ $pink: #f1a89c;
 
 h2 {
     color: white;
-    font-size:2em;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -37,7 +47,6 @@ body {
     position: absolute;
     z-index: 999;
     top: 0;
-    visibility: hidden;
     #introTypo {
         margin: 20px auto;
         width: 50vw;
@@ -78,7 +87,7 @@ video#bgvid {
     transform: translateX(-50%) translateY(-50%);
     background: url(images/bg.jpg) no-repeat;
     background-size: cover;
-    visibility: hidden;
+
 }
 
 /* ----- How to play ----- */
@@ -90,7 +99,7 @@ video#bgvid {
     width: 100vw;
     height: 100vh;
     visibility: hidden;
-    h3{
+    h3 {
         text-align: center;
         margin: 60px auto;
     }
@@ -98,16 +107,72 @@ video#bgvid {
         cursor: pointer !important;
         display: block;
         width: 65vh;
-        margin:0 auto;
+        margin: 0 auto;
     }
 }
 
-/* ----- Countries title ----- */
+/* ----- Setting area ----- */
 
-#country-title {
-    margin: 80px auto 140px auto;
+.blue-area {
+    background-color: $blue;
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.red-area {
+    width: 100vw;
+    background-color: $orange;
+    height: 50vh;
+    position: fixed;
+}
+
+/* ----- Countries title Style + Score ----- */
+
+.country-title {
+    text-align: left;
+    font-size: $countryfontSize;
+    color: white;
+    width: 60vw;
+    display: inline-block;
+    &:nth-child(1) {
+        margin-left: 20px;
+        margin-bottom: 60px;
+        margin-top: 40px;
+    }
+    &:nth-child(2) {
+        margin-right: 20px;
+        margin-bottom: 40px;
+        margin-top: 60px;
+        transform: scaleY(-1) scaleX(-1);
+    }
+}
+
+.red-info {
     text-align: center;
-    font-size: 8em;
+}
+
+.blue-info {
+    text-align: center;
+}
+
+.score {
+    color: $green;
+    width: 30vw;
+    font-size: $countryfontSize;
+    display: inline-block;
+    &:nth-child(2) {
+        text-align: right;
+
+    }
+    &:nth-child(1) {
+        transform: scaleY(-1) scaleX(-1);
+        text-align: right;
+
+    }
 }
 
 /* ----- Countries thumbnails ----- */
@@ -118,6 +183,7 @@ video#bgvid {
     text-align: center;
     margin: 0 auto;
 }
+
 .grid2 {
     display: block;
     width: 830px;
@@ -125,10 +191,12 @@ video#bgvid {
     margin: 0 auto;
     background-color: aqua;
 }
+
 .selection-blocks {
     cursor: pointer;
     width: 200px;
     height: 160px;
+    background-color: bisque;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

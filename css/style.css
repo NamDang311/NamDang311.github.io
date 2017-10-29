@@ -1,23 +1,26 @@
-/* line 8, ../scss/style.scss */
+/* ----- Colours ----- */
+/* ----- Settings ----- */
+/* ----- General ----- */
+/* line 18, ../scss/style.scss */
 .align-mid, .splashScreen #credit, .splashScreen #startButton {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
-/* line 14, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
 .shadow-1, .splashScreen #startButton {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* line 18, ../scss/style.scss */
+/* line 28, ../scss/style.scss */
 h2 {
   color: white;
   font-size: 2em;
   text-align: center;
 }
 
-/* line 24, ../scss/style.scss */
+/* line 34, ../scss/style.scss */
 body {
   background-color: #e7deaf;
   width: 100vw;
@@ -27,26 +30,25 @@ body {
 }
 
 /* ----- Splash screen ----- */
-/* line 34, ../scss/style.scss */
+/* line 44, ../scss/style.scss */
 .splashScreen {
   width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: 999;
   top: 0;
-  visibility: hidden;
 }
-/* line 41, ../scss/style.scss */
+/* line 50, ../scss/style.scss */
 .splashScreen #introTypo {
   margin: 20px auto;
   width: 50vw;
   position: relative;
 }
-/* line 46, ../scss/style.scss */
+/* line 55, ../scss/style.scss */
 .splashScreen #credit {
   bottom: 5%;
 }
-/* line 50, ../scss/style.scss */
+/* line 59, ../scss/style.scss */
 .splashScreen #startButton {
   cursor: pointer;
   font-size: 1.5em;
@@ -60,7 +62,7 @@ body {
   border: none;
 }
 
-/* line 66, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 video#bgvid {
   position: fixed;
   top: 50%;
@@ -76,11 +78,10 @@ video#bgvid {
   transform: translateX(-50%) translateY(-50%);
   background: url(images/bg.jpg) no-repeat;
   background-size: cover;
-  visibility: hidden;
 }
 
 /* ----- How to play ----- */
-/* line 86, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 .guide {
   position: absolute;
   top: 0;
@@ -89,12 +90,12 @@ video#bgvid {
   height: 100vh;
   visibility: hidden;
 }
-/* line 93, ../scss/style.scss */
+/* line 102, ../scss/style.scss */
 .guide h3 {
   text-align: center;
   margin: 60px auto;
 }
-/* line 97, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 .guide img {
   cursor: pointer !important;
   display: block;
@@ -102,16 +103,77 @@ video#bgvid {
   margin: 0 auto;
 }
 
-/* ----- Countries title ----- */
-/* line 107, ../scss/style.scss */
-#country-title {
-  margin: 80px auto 140px auto;
+/* ----- Setting area ----- */
+/* line 116, ../scss/style.scss */
+.blue-area {
+  background-color: #267884;
+  height: 50vh;
+  width: 100vw;
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+/* line 126, ../scss/style.scss */
+.red-area {
+  width: 100vw;
+  background-color: #fb754d;
+  height: 50vh;
+  position: fixed;
+}
+
+/* ----- Countries title Style + Score ----- */
+/* line 135, ../scss/style.scss */
+.country-title {
+  text-align: left;
+  font-size: 5vw;
+  color: white;
+  width: 60vw;
+  display: inline-block;
+}
+/* line 141, ../scss/style.scss */
+.country-title:nth-child(1) {
+  margin-left: 20px;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+/* line 146, ../scss/style.scss */
+.country-title:nth-child(2) {
+  margin-right: 20px;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  transform: scaleY(-1) scaleX(-1);
+}
+
+/* line 154, ../scss/style.scss */
+.red-info {
   text-align: center;
-  font-size: 8em;
+}
+
+/* line 158, ../scss/style.scss */
+.blue-info {
+  text-align: center;
+}
+
+/* line 162, ../scss/style.scss */
+.score {
+  color: #00C997;
+  width: 30vw;
+  font-size: 5vw;
+  display: inline-block;
+}
+/* line 167, ../scss/style.scss */
+.score:nth-child(2) {
+  text-align: right;
+}
+/* line 171, ../scss/style.scss */
+.score:nth-child(1) {
+  transform: scaleY(-1) scaleX(-1);
+  text-align: right;
 }
 
 /* ----- Countries thumbnails ----- */
-/* line 115, ../scss/style.scss */
+/* line 180, ../scss/style.scss */
 .grid {
   display: block;
   width: 830px;
@@ -119,7 +181,7 @@ video#bgvid {
   margin: 0 auto;
 }
 
-/* line 121, ../scss/style.scss */
+/* line 187, ../scss/style.scss */
 .grid2 {
   display: block;
   width: 830px;
@@ -128,17 +190,18 @@ video#bgvid {
   background-color: aqua;
 }
 
-/* line 128, ../scss/style.scss */
+/* line 195, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
   height: 160px;
+  background-color: bisque;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-/* line 137, ../scss/style.scss */
+/* line 205, ../scss/style.scss */
 .correct2 {
   background-color: red;
 }
