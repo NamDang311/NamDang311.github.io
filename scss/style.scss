@@ -41,11 +41,19 @@ body {
 
 /* ----- Splash screen ----- */
 
+.blockScreen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 99999;
+}
+
 .splashScreen {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: 999;
+    z-index: 9999;
     top: 0;
     #introTypo {
         margin: 20px auto;
@@ -55,22 +63,35 @@ body {
     #credit {
         @extend .align-mid;
         bottom: 5%;
-    }
-    #startButton {
-        cursor: pointer;
-        font-size: 1.5em;
-        color: white;
-        background-color: black;
-        bottom: 12%;
-        border-radius: 0px;
-        width: 320px;
-        height: 60px;
-        text-decoration: none;
-        border: none;
-        @extend .shadow-1;
-        @extend .align-mid;
+        white-space: nowrap;
     }
 }
+
+button {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.2em;
+    padding-bottom: 6px;
+    cursor: pointer;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    background: url("../images/2x/buttonBG@2x.png") no-repeat;
+    background-size: contain;
+    bottom: 12%;
+    border-radius: 0px;
+    width: 240px;
+    height: 60px;
+    text-decoration: none;
+    border: none;
+    @extend .shadow-1;
+    @extend .align-mid;
+}
+
+button:focus {
+    outline: none;
+}
+
 
 video#bgvid {
     position: fixed;
@@ -95,21 +116,37 @@ video#bgvid {
 .guide {
     position: absolute;
     top: 0;
+    z-index: 999;
     background-color: $orange;
     width: 100vw;
     height: 100vh;
-    visibility: hidden;
     h3 {
         text-align: center;
-        margin: 60px auto;
+        font-size: 2em;
+        margin: 30px auto;
     }
     img {
         cursor: pointer !important;
         display: block;
         width: 65vh;
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
     }
 }
+
+#loadingContainer {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+
+/* ----- Staging ----- */
+.readyStage{
+    position: fixed;
+    background-color: "rgba(0,0,0,.40)";
+    width:100vw;
+    height: 100vh;
+}
+
 
 /* ----- Setting area ----- */
 
