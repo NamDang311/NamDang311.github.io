@@ -7,6 +7,8 @@ $green: #00C997;
 $pale: #EEF5DB;
 $blue: #267884;
 $pink: #f1a89c;
+$skip:hidden;
+$block:black;
 
 /* ----- Settings ----- */
 
@@ -47,6 +49,7 @@ body {
     height: 100vh;
     background-color: black;
     z-index: 99999;
+    visibility: $skip;
 }
 
 .splashScreen {
@@ -55,6 +58,7 @@ body {
     position: absolute;
     z-index: 9999;
     top: 0;
+    visibility: $skip;
     #introTypo {
         margin: 20px auto;
         width: 50vw;
@@ -94,6 +98,7 @@ button:focus {
 
 
 video#bgvid {
+    visibility: $skip;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -114,6 +119,7 @@ video#bgvid {
 /* ----- How to play ----- */
 
 .guide {
+    visibility: $skip;
     position: absolute;
     top: 0;
     z-index: 999;
@@ -134,16 +140,18 @@ video#bgvid {
 }
 
 #loadingContainer {
+    visibility: $skip;
     margin: 0 auto;
     width: 80px;
     height: 80px;
 }
 
 /* ----- Staging ----- */
-.readyStage{
+
+.readyStage {
     position: fixed;
     background-color: "rgba(0,0,0,.40)";
-    width:100vw;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -155,7 +163,6 @@ video#bgvid {
     height: 50vh;
     width: 100vw;
     position: relative;
-
     display: table-cell;
     vertical-align: bottom;
 }
@@ -165,6 +172,31 @@ video#bgvid {
     background-color: $orange;
     height: 50vh;
     position: fixed;
+}
+
+.block-area {
+    width: 100vw;
+    background-color: $block;
+    height: 50vh;
+    position: fixed;
+    visibility: hidden;
+    img {
+        top:25%;
+        @extend .align-mid;
+    }
+}
+
+.top-half {
+    top: 0;
+    visibility: visible;
+    img {
+       transform: scaleY(-1) scaleX(-1) translate(50%, 0);
+    }
+}
+
+.bottom-half {
+    top: 50%;
+    visibility: visible;
 }
 
 /* ----- Countries title Style + Score ----- */

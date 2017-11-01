@@ -1,26 +1,26 @@
 /* ----- Colours ----- */
 /* ----- Settings ----- */
 /* ----- General ----- */
-/* line 18, ../scss/style.scss */
-.align-mid, .splashScreen #credit, button {
+/* line 20, ../scss/style.scss */
+.align-mid, .splashScreen #credit, button, .block-area img {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 }
 
-/* line 24, ../scss/style.scss */
+/* line 26, ../scss/style.scss */
 .shadow-1, button {
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* line 28, ../scss/style.scss */
+/* line 30, ../scss/style.scss */
 h2 {
   color: white;
   font-size: 2em;
   text-align: center;
 }
 
-/* line 34, ../scss/style.scss */
+/* line 36, ../scss/style.scss */
 body {
   background-color: #e7deaf;
   width: 100vw;
@@ -30,36 +30,38 @@ body {
 }
 
 /* ----- Splash screen ----- */
-/* line 44, ../scss/style.scss */
+/* line 46, ../scss/style.scss */
 .blockScreen {
   position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: black;
   z-index: 99999;
+  visibility: hidden;
 }
 
-/* line 52, ../scss/style.scss */
+/* line 55, ../scss/style.scss */
 .splashScreen {
   width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: 9999;
   top: 0;
+  visibility: hidden;
 }
-/* line 58, ../scss/style.scss */
+/* line 62, ../scss/style.scss */
 .splashScreen #introTypo {
   margin: 20px auto;
   width: 50vw;
   position: relative;
 }
-/* line 63, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 .splashScreen #credit {
   bottom: 5%;
   white-space: nowrap;
 }
 
-/* line 70, ../scss/style.scss */
+/* line 74, ../scss/style.scss */
 button {
   font-family: 'Bangers', cursive;
   letter-spacing: 0.2em;
@@ -79,13 +81,14 @@ button {
   border: none;
 }
 
-/* line 91, ../scss/style.scss */
+/* line 95, ../scss/style.scss */
 button:focus {
   outline: none;
 }
 
-/* line 96, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
 video#bgvid {
+  visibility: hidden;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -103,8 +106,9 @@ video#bgvid {
 }
 
 /* ----- How to play ----- */
-/* line 116, ../scss/style.scss */
+/* line 121, ../scss/style.scss */
 .guide {
+  visibility: hidden;
   position: absolute;
   top: 0;
   z-index: 999;
@@ -112,13 +116,13 @@ video#bgvid {
   width: 100vw;
   height: 100vh;
 }
-/* line 123, ../scss/style.scss */
+/* line 129, ../scss/style.scss */
 .guide h3 {
   text-align: center;
   font-size: 2em;
   margin: 30px auto;
 }
-/* line 128, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 .guide img {
   cursor: pointer !important;
   display: block;
@@ -126,15 +130,16 @@ video#bgvid {
   margin: 0 auto 20px auto;
 }
 
-/* line 136, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 #loadingContainer {
+  visibility: hidden;
   margin: 0 auto;
   width: 80px;
   height: 80px;
 }
 
 /* ----- Staging ----- */
-/* line 143, ../scss/style.scss */
+/* line 151, ../scss/style.scss */
 .readyStage {
   position: fixed;
   background-color: "rgba(0,0,0,.40)";
@@ -143,7 +148,7 @@ video#bgvid {
 }
 
 /* ----- Setting area ----- */
-/* line 153, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
 .blue-area {
   background-color: #267884;
   height: 50vh;
@@ -153,7 +158,7 @@ video#bgvid {
   vertical-align: bottom;
 }
 
-/* line 163, ../scss/style.scss */
+/* line 170, ../scss/style.scss */
 .red-area {
   width: 100vw;
   background-color: #fb754d;
@@ -161,8 +166,37 @@ video#bgvid {
   position: fixed;
 }
 
+/* line 177, ../scss/style.scss */
+.block-area {
+  width: 100vw;
+  background-color: black;
+  height: 50vh;
+  position: fixed;
+  visibility: hidden;
+}
+/* line 183, ../scss/style.scss */
+.block-area img {
+  top: 25%;
+}
+
+/* line 189, ../scss/style.scss */
+.top-half {
+  top: 0;
+  visibility: visible;
+}
+/* line 192, ../scss/style.scss */
+.top-half img {
+  transform: scaleY(-1) scaleX(-1) translate(50%, 0);
+}
+
+/* line 197, ../scss/style.scss */
+.bottom-half {
+  top: 50%;
+  visibility: visible;
+}
+
 /* ----- Countries title Style + Score ----- */
-/* line 172, ../scss/style.scss */
+/* line 204, ../scss/style.scss */
 .country-title {
   text-align: left;
   font-size: 5vw;
@@ -170,13 +204,13 @@ video#bgvid {
   width: 60vw;
   display: inline-block;
 }
-/* line 178, ../scss/style.scss */
+/* line 210, ../scss/style.scss */
 .country-title:nth-child(1) {
   margin-left: 20px;
   margin-bottom: 60px;
   margin-top: 40px;
 }
-/* line 183, ../scss/style.scss */
+/* line 215, ../scss/style.scss */
 .country-title:nth-child(2) {
   margin-right: 20px;
   margin-bottom: 40px;
@@ -184,35 +218,35 @@ video#bgvid {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 191, ../scss/style.scss */
+/* line 223, ../scss/style.scss */
 .red-info {
   text-align: center;
 }
 
-/* line 195, ../scss/style.scss */
+/* line 227, ../scss/style.scss */
 .blue-info {
   text-align: center;
 }
 
-/* line 199, ../scss/style.scss */
+/* line 231, ../scss/style.scss */
 .score {
   color: #00C997;
   width: 30vw;
   font-size: 5vw;
   display: inline-block;
 }
-/* line 204, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
 .score:nth-child(2) {
   text-align: right;
 }
-/* line 208, ../scss/style.scss */
+/* line 240, ../scss/style.scss */
 .score:nth-child(1) {
   transform: scaleY(-1) scaleX(-1);
   text-align: right;
 }
 
 /* ----- Countries thumbnails ----- */
-/* line 217, ../scss/style.scss */
+/* line 249, ../scss/style.scss */
 .grid {
   display: block;
   width: 830px;
@@ -220,7 +254,7 @@ video#bgvid {
   margin: 0 auto;
 }
 
-/* line 224, ../scss/style.scss */
+/* line 256, ../scss/style.scss */
 .grid2 {
   display: block;
   width: 830px;
@@ -229,7 +263,7 @@ video#bgvid {
   background-color: aqua;
 }
 
-/* line 232, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
@@ -240,7 +274,7 @@ video#bgvid {
   background-position: center;
 }
 
-/* line 242, ../scss/style.scss */
+/* line 274, ../scss/style.scss */
 .correct2 {
   background-color: red;
 }
