@@ -91,7 +91,11 @@ $(".country-title").html(countriesA[0]);
 var collectionimg = ["russia", "australia", "india", "south%20africa", "china", "kenya", "ukraine"];
 var currentimgName = countriesA[0].replace(" ", "%20");
 var correctsrc = "url(../images/flags/" + currentimgName + ".png)";
-$(".correct").css("background-image", correctsrc);
+
+! function loadCorrectImg() {
+    $(".correct").css("background-image", correctsrc);
+};
+
 
 //Load random images
 ! function loadRandomImg() {
@@ -101,8 +105,7 @@ $(".correct").css("background-image", correctsrc);
 }();
 
 /** Score system */
-var blueScore = 0;
-var redScore = 0;
+var blueScore, redScore = 0;
 
 function updateScore() {
     $(".red-score").html(redScore);
@@ -112,18 +115,36 @@ function updateScore() {
 //Load random images -- BLUE : sideNumber = 0, RED : sideNumber = 1  
 function checkSide(value, sideNumber) {
     if (value == "true") { //If click correct option
-        if (sideNumber == 0) {
+        if (sideNumber == 0) { //On blue side 
             blueScore++;
             updateScore();
+            blueIsSelected = !blueIsSelected;
         } else {
             redScore++;
             updateScore();
+            redIsSelected = !redIsSelected;
         }
     } else { //If click incorrect option
-        if (sideNumber < 3) {//blue side
+        if (sideNumber < 3) { //On blue side
             $(".block-area").addClass("top-half");
-        } else {//red side
-            
+        } else { //On red side
+
         }
     }
+}
+
+/** Check if team has made selection */
+var blueIsSelected = false,
+    redIsSelected = false;
+
+setInterval(function () {
+    if (blueIsSelected && redIsSelected) { //If both are selected
+        resetSelectedStatus()
+
+    }
+}, 100);
+
+function resetSelectedStatus() {
+    blueIsSelected = false;
+    redIsSelected = false;
 }

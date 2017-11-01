@@ -32,8 +32,8 @@ var stagingSound = new Howl({
 var sceneSound_1 = new Howl({
     src: ['../sound/soundtracks/1.mp3'],
 });
-stagingSound.play();
 
 function playSetSound() {
     stagingSound.play();
 }
+
