@@ -1,4 +1,13 @@
 @font-face {
+    font-family: 'super_mario_256regular';
+    src: url('supermario256-webfont.woff2') format('woff2'),
+         url('supermario256-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
   font-family: 'Frontage 3D';
   src: url('Frontage3D.eot'); /* IE9 Compat Modes */
   src: url('Frontage3D.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */

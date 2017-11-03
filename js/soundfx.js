@@ -27,6 +27,8 @@ var stagingSound = new Howl({
     src: ['../sound/stage.mp3'],
     onend: function () {
         sceneSound_1.play();
+        // Kill readyStage overlay
+//        $(".readyStage").hide();
     }
 });
 var sceneSound_1 = new Howl({

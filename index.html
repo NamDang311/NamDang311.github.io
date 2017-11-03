@@ -38,6 +38,7 @@
         <div id="credit">
             Proudly presented by The Social Club
         </div>
+
     </div>
 
     <!--How to play-->
@@ -49,7 +50,8 @@
 
     <!--Stage set-->
     <div class="readyStage">
-
+        <span id="readyTitle">READY</span>
+        <span id="goTitle">GO</span>
     </div>
 
 
@@ -67,48 +69,55 @@
                 <div class="country-title">
                     Blue team
                 </div>
+
+            </div>
+            <div class="block-area-top">
+                <img src="#0" height="200px" />
+            </div>
+        </div>
+
+        <div class="red-area">
+
+            <div class="red-info">
+                <div class="country-title">
+                    Red team
+                </div>
+                <div class="red-score score">0</div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="red-area">
-        <div class="red-info">
-            <div class="country-title">
-                Red team
+            <div class="grid">
+                <div class="selection-blocks correct number">1</div>
+                <div class="selection-blocks selection-blocks-2 incorrect number"></div>
+                <div class="selection-blocks selection-blocks-3 incorrect number"></div>
+                <div class="selection-blocks selection-blocks-4 incorrect number"></div>
             </div>
-            <div class="red-score score">0</div>
         </div>
-
-        <div class="grid">
-            <div class="selection-blocks correct number">1</div>
-            <div class="selection-blocks selection-blocks-2 incorrect number"></div>
-            <div class="selection-blocks selection-blocks-3 incorrect number"></div>
-            <div class="selection-blocks selection-blocks-4 incorrect number"></div>
+        <div class="block-area-bottom">
+            <img src="#0" height="200px" />
         </div>
-    </div>
-    <div class="block-area">
-        <img src="https://media.giphy.com/media/g69ZPJfLy7hD2/giphy.gif" width="200px" height="200px"/>
-    </div>
+        <div class="scoreAnnoucement"></div>
+        <div class="roundAnnouncement"><span>Round 1</span></div>
 
 
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/phaser.min.js" type="text/javascript"></script>
-    <script src="js/gsap/TweenMax.min.js" type="text/javascript"></script>
-    <script src="js/gsap/TimelineMax.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.6/pixi.js" type="text/javascript"></script>
-    <script src="js/gsap/plugins/DrawSVGPlugin.js" type="text/javascript"></script>
-    <script src="js/gsap/utils/Draggable.min.js" type="text/javascript"></script>
-    <script src="js/gsap/utils/SplitText.js" type="text/javascript"></script>
-    <!--    <script src="    http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>-->
-    <script src="js/gsap/plugins/ScrambleTextPlugin.js" type="text/javascript">></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js" type="text/javascript"></script>
-    <script src="js/soundfx.js" type="text/javascript"></script>
-    <script src="js/common.js" type="text/javascript"></script>
+       
+       
+        <script src="js/gsap/TweenMax.min.js" type="text/javascript"></script>
+        <script src="js/gsap/TimelineMax.js" type="text/javascript"></script>
+        <script src="js/gsap/plugins/DrawSVGPlugin.js" type="text/javascript"></script>
+        <script src="js/gsap/utils/Draggable.min.js" type="text/javascript"></script>
+        <script src="js/gsap/utils/SplitText.js" type="text/javascript"></script>
+        <!--    <script src="    http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>-->
+        <script src="js/gsap/plugins/ScrambleTextPlugin.js" type="text/javascript"></script>
+<!--        <script src="https://unpkg.com/babel-standalone@6/babel.min.js" type="text/javascript"></script>-->
+       <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+       <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+       
+       
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js" type="text/javascript"></script>
+        <script src="js/soundfx.js" type="text/javascript"></script>
+        <script src="js/ES6.js" type="module"></script>
+        <script src="js/common.js" type="text/javascript"></script>
 </body>
 
 </html>
