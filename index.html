@@ -18,7 +18,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+<!--    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>-->
     <script src="js/bigtext.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.12.3/bodymovin.js
 " type="text/javascript"></script>
@@ -30,7 +30,7 @@
 
     <!--Splash Screen-->
     <div class="splashScreen">
-        <video playsinline autoplay muted loop poster="bg.jpg" id="bgvid">
+        <video playsinline autoplay muted loop poster="#" id="bgvid">
         <source src="images/bg.mp4" type="video/mp4">
         </video>
         <div id="introTypo"><img src="images/SVG/lookTitle.svg" /></div>
@@ -54,7 +54,7 @@
         <span id="goTitle">GO</span>
     </div>
 
-
+ 
     <div class="blue-area">
         <div class="blue-wrap">
             <div class="grid">
@@ -72,9 +72,10 @@
 
             </div>
             <div class="block-area-top">
-                <img src="#0" height="200px" />
+                <img src="#0" height="300px" />
             </div>
         </div>
+    </div>
 
         <div class="red-area">
 
@@ -93,10 +94,12 @@
             </div>
         </div>
         <div class="block-area-bottom">
-            <img src="#0" height="200px" />
+            <img src="#0" height="300px" />
         </div>
         <div class="scoreAnnoucement"></div>
-        <div class="roundAnnouncement"><span>Round 1</span></div>
+        <div class="roundAnnouncement"><span id="roundCall">Round 1</span><span id="finalCall">Round 1</span>
+        
+        </div>
 
 
        
@@ -108,15 +111,11 @@
         <script src="js/gsap/utils/SplitText.js" type="text/javascript"></script>
         <!--    <script src="    http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>-->
         <script src="js/gsap/plugins/ScrambleTextPlugin.js" type="text/javascript"></script>
-<!--        <script src="https://unpkg.com/babel-standalone@6/babel.min.js" type="text/javascript"></script>-->
-       <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-       <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-       
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js" type="text/javascript"></script>
        
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js" type="text/javascript"></script>
         <script src="js/soundfx.js" type="text/javascript"></script>
-        <script src="js/ES6.js" type="module"></script>
         <script src="js/common.js" type="text/javascript"></script>
 </body>
 

@@ -1,14 +1,14 @@
+/* jshint esversion:6 , browser: true */
+/*jshint -W030*/
+
+let maxRound = 5
 let currentRound = 1;
 var blueScore = 0;
 var redScore = 0;
 var blueIsSelected = false,
     redIsSelected = false;
 
-/** Database -> Set base for set 1/2 */
-var countries = ["Australia", "Brazil", "China", "Germany", "Great Britain", "India", "Iran", "Kenya", "New Zealand", "Pakistan", "Poland", "Russia", "South Africa", "Ukraine", "Vietnam"];
-var countriesShuffle = _.shuffle(countries);
-var countriesA = countriesShuffle.splice(0, 5);
-var countriesB = countriesShuffle.splice(6, 12);
+
 
 /** Check if video is loaded and remove block screen */
 window.addEventListener('load', function () {
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
 
 $("#startButton").on("click touchstart", function (event) {
-    TweenMax.to(".splashScreen", 0.2, {
+    TweenMax.to(".splashScreen, .splashScreen *", 0.2, {
         autoAlpha: 0,
         delay: 1
     }, 1);
@@ -111,34 +111,41 @@ setInterval(function () {
     $grid.isotope('shuffle');
 }, 1000);
 
-//Load title
-$(".country-title").html(countriesA[0]);
+/** Database -> Set base for set 1/2 */
+var countries = ["Australia", "Brazil", "China", "Germany", "Great Britain", "India", "Iran", "Kenya", "New Zealand", "Pakistan", "Poland", "Russia", "South Africa", "Ukraine", "Vietnam"];
+
+//Title
+$(".country-title").html(countries[currentRound]);
 
 //1st - Load correct image
-var collectionimg = ["Russia", "Australia", "India", "South%20Africa", "China", "Kenya", "Ukraine"];
-var currentimgName = countriesA[currentRound].replace(" ", "%20");
-
+var currentimgName = countries[currentRound].replace(" ", "%20");
 function loadCorrectImg() {
     $(".correct").css("background-image", "url(../images/flags/" + currentimgName + ".png)");
 }
 loadCorrectImg();
 
 //Load random images
-! function loadRandomImg() {
-    for (var i = 2; i < 5; i++) {
-        $(".selection-blocks-" + i).css("background-image", "url(../images/flags/" + collectionimg[i] + ".png)");
-    }
-}();
+var newArrImg;
 
+function loadRandomImg() {
+    newArrImg = _.sample(_.range(1,195), 6);
+    console.log (newArrImg);
+    for (var i = 2; i < 5; i++) {
+        $(".selection-blocks-" + i).css("background-image", "url(../images/flags/random/" + newArrImg[i] + ".png)");
+    }
+};
+loadRandomImg();
 /** Score system */
 
 
 function updateScore() {
     $(".red-score").html(redScore);
     $(".blue-score").html(blueScore);
-};
+}
 
 //Load random images -- BLUE : sideNumber = 0, RED : sideNumber = 1  
+var numberOfWrong = 0;
+
 function checkSide(value, sideNumber) {
     if (value == "true") { //If click correct option
         if (sideNumber === 0) { //On blue side 
@@ -146,63 +153,139 @@ function checkSide(value, sideNumber) {
             blueScore++;
             updateScore();
             blueIsSelected = !blueIsSelected;
-            
-            //
-            $(".block-area-top img").attr("src","../images/correct/#{currentRound}.gif")
-            $(".block-area-top").addClass("top-half");
-        } else {
+
+            // Correct annnounce
+            showBlueBlock("correct");
+            showRedBlock("incorrect", 0);
+
+            //Move next around
+            _.delay(setNextRound, 4000);
+
+        } else { // On red side
             // Add score
             redScore++;
             updateScore();
             redIsSelected = !redIsSelected;
+
+            // Correct annnounce
+            showRedBlock("correct");
+            showBlueBlock("incorrect", 0);
+
+            //Move next around
+            _.delay(setNextRound, 4000);
         }
     } else { //If click incorrect option
         if (sideNumber < 3) { //On blue side
-//            $(".block-area").addClass("top-half");
+            showBlueBlock("incorrect");
+            checkNumberOfWrong();
         } else { //On red side
-//            $(".block-area").addClass("bottom-half");
+            showRedBlock("incorrect");
+            checkNumberOfWrong();
         }
     }
 }
 
+function checkNumberOfWrong() {
+    if (numberOfWrong == 0) {
+        numberOfWrong++;
+    } else {
+        _.delay(setNextRound, 4000);
+        numberOfWrong = 0;
+    }
 
+}
+
+/** Correct/Incorrect Announcement */
+function showBlueBlock(checkResult, showImage) {
+    if (showImage === 0) {
+
+    } else {
+        $(".block-area-top img").attr(`src`, `../images/blue/${checkResult}/${currentRound}.gif`);
+    }
+    $(".block-area-top").addClass("top-half");
+    if (checkResult === "correct") {
+        $(".block-area-top").addClass("correctColor");
+    } else {
+        $(".block-area-top").addClass("incorrectColor");
+    }
+}
+
+function showRedBlock(checkResult, showImage) {
+    if (showImage === 0) {
+
+    } else {
+        $(".block-area-bottom img").attr(`src`, `../images/red/${checkResult}/${currentRound}.gif`);
+    }
+
+    $(".block-area-bottom").addClass("bottom-half");
+    if (checkResult == "correct") {
+        $(".block-area-bottom").addClass("correctColor");
+    } else {
+        $(".block-area-bottom").addClass("incorrectColor");
+    }
+}
+
+function resetSideBlock() {
+    //Clear img src
+    $(".block-area-bottom img").attr(`src`, `#`);
+    $(".block-area-top img").attr(`src`, `#`);
+
+    //Clear side block
+    $(".block-area-top").removeClass('correctColor incorrectColor top-half');
+    $(".block-area-bottom").removeClass('correctColor incorrectColor bottom-half');
+}
 
 /** Check if team has made selection */
 var roundDeclare = new TimelineMax({
     paused: true
 });
+
 TweenMax.set(".roundAnnouncement", {
     autoAlpha: 0
 });
 roundDeclare.to(".roundAnnouncement", 0.4, {
-    autoAlpha: 1
-}).from(".roundAnnouncement span", 0.2, {
-    y: "-=500"
-}).to(".roundAnnouncement span", 0.2, {
-    y: "+=500"
+    autoAlpha: 1,
+    onComplete: resetSideBlock
+}).from("#roundCall", 0.2, {
+    y: "-=450%"
+}).to("#roundCall", 0.2, {
+    y: "+=450%"
 }, "+=1").to(".roundAnnouncement", 0.4, {
     autoAlpha: 0
 });
 
-
-setInterval(function () {
-    //Check if one of the selections is correct
-    if (blueIsSelected || redIsSelected) {
-        //
-        
-
-        //Trigger annoucement
-        currentRound++;
-        $(".roundAnnouncement span").html("Round " + currentRound);
-        //        roundDeclare.play(0);
-        setNextRound();
-    }
-}, 100);
+var finishGame = new TimelineMax ({paused:true});
+TweenMax.set("#finalCall", {
+    autoAlpha: 0
+});
+finishGame.to(".roundAnnouncement", 0.4, {
+    autoAlpha: 1,
+}).to("#finalCall",4,{autoAlpha:1},"+=1.5");
 
 function setNextRound() {
-    currentimgName = countriesA[currentRound].replace(" ", "%20");
-    loadCorrectImg();
-    resetSelectedStatus();
+    if (currentRound === maxRound) {
+        // if max round reached, declare winner
+        if (redScore > blueScore){
+        $("#finalCall").html("Winner<br/>Red Team");
+          $("#finalCall").addClass("redColor");  
+        finishGame.play(0);
+        } else {
+            $("#finalCall").html("Blue Team<br/>Win");
+             $("#finalCall").addClass("blueColor"); 
+        finishGame.play(0);
+        }
+        
+    } else {
+        //continue
+        currentRound++;
+        $("#roundCall").html("Round " + currentRound);
+        roundDeclare.play(0);
+        currentimgName = countries[currentRound].replace(" ", "%20");
+        $(".country-title").html(countries[currentRound]);
+        loadCorrectImg();
+        loadRandomImg();
+        resetSelectedStatus();
+    }
 }
 
 function resetSelectedStatus() {

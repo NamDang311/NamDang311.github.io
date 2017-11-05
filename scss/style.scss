@@ -4,12 +4,11 @@ $yellow: #e7deaf;
 $orange: #fb754d;
 $green: #00C997;
 $dark: #24292E;
-
 $red: #E51F1B;
 $blue: #0D64AD;
-$skip:hidden;
 $block:black;
 
+$skip:visible;
 /* ----- Settings ----- */
 
 $countryfontSize:5vw;
@@ -18,11 +17,12 @@ $countryfontSize:5vw;
 /* ----- General ----- */
 
 @mixin overlay() {
-    background-color: rgba(0, 0, 0, .92);
+    background-color: rgba(0, 0, 0, 1);
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
+    
 }
 
 @mixin fontMario() {
@@ -38,6 +38,7 @@ $countryfontSize:5vw;
     position: absolute;
     top: 35%;
 }
+
 
 
 .align-mid {
@@ -79,7 +80,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: 9999;
+    z-index: 99999;
     top: 0;
     visibility: $skip;
     #introTypo {
@@ -134,7 +135,7 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(images/bg.jpg) no-repeat;
+//    background: url(images/bg.jpg) no-repeat;
     background-size: cover;
 
 }
@@ -182,7 +183,7 @@ video#bgvid {
         margin: auto;
         position: absolute;
         top: 35%;
-        letter-spacing: 0.5em;
+        letter-spacing: 0.2em;
         text-align: center;
         @include fontMario();
 
@@ -217,9 +218,10 @@ video#bgvid {
     background-color: $block;
     height: 50vh;
     position: fixed;
-    visibility: hidden; 
+    z-index: 999;
+    visibility: hidden;
     img {
-        top: 25%;
+        top: 15%;
         @extend .align-mid;
     }
 }
@@ -227,7 +229,7 @@ video#bgvid {
 .top-half {
     top: 0;
     visibility: visible;
-    background-color: $green;
+    box-shadow: 0 12px 0 $blue inset;
     img {
         transform: scaleY(-1) scaleX(-1) translate(50%, 0);
     }
@@ -236,12 +238,14 @@ video#bgvid {
 .bottom-half {
     top: 50%;
     visibility: visible;
+    box-shadow: 0 -12px 0 $red inset;
 }
 
 .roundAnnouncement {
     @include overlay();
     @include fontMario();
     font-size: 10em;
+    z-index: 99999;
     text-align: center;
     span {
         @include alignText();
@@ -249,6 +253,21 @@ video#bgvid {
     }
 }
 
+.correctColor {
+    background-color: $green;
+}
+.incorrectColor {
+	 background-color: rgba(0, 0, 0, .98);
+}
+.redColor{
+    color:$red;
+    
+}
+
+.blueColor{
+    color:$blue;
+    
+}
 /* ----- Countries title Style + Score ----- */
 
 .country-title {
@@ -301,15 +320,11 @@ video#bgvid {
     width: 830px;
     text-align: center;
     margin: 0 auto;
+    &:first-child{
+        transform: scaleY(-1) scaleX(-1);
+    }
 }
 
-.grid2 {
-    display: block;
-    width: 830px;
-    text-align: center;
-    margin: 0 auto;
-    background-color: aqua;
-}
 
 .selection-blocks {
     cursor: pointer;
