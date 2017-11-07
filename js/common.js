@@ -8,6 +8,20 @@ var redScore = 0;
 var blueIsSelected = false,
     redIsSelected = false;
 
+function toggleFullScreen() {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  }
+  else {
+    cancelFullScreen.call(doc);
+  }
+}
 
 
 /** Check if video is loaded and remove block screen */
@@ -21,6 +35,8 @@ window.addEventListener('load', function () {
                 autoAlpha: 0,
                 delay: "1"
             });
+            toggleFullScreen();
+            document.body.requestFullscreen();
         } else {
             setTimeout(checkLoad, 100);
         }
@@ -112,7 +128,7 @@ setInterval(function () {
 }, 1000);
 
 /** Database -> Set base for set 1/2 */
-var countries = ["Australia", "Brazil", "China", "Germany", "Great Britain", "India", "Iran", "Kenya", "New Zealand", "Pakistan", "Poland", "Russia", "South Africa", "Ukraine", "Vietnam"];
+var countries = ["australia", "brazil", "china", "germany", "great britain", "india", "Iran", "Kenya", "New Zealand", "Pakistan", "Poland", "Russia", "South Africa", "Ukraine", "Vietnam"];
 
 //Title
 $(".country-title").html(countries[currentRound]);

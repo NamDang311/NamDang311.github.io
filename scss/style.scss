@@ -276,6 +276,7 @@ video#bgvid {
     color: white;
     width: 60vw;
     display: inline-block;
+    text-transform: capitalize;
     &:nth-child(1) {
         margin-left: 20px;
         margin-bottom: 60px;
