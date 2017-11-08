@@ -2,7 +2,7 @@
 /* ----- Settings ----- */
 /* ----- General ----- */
 /* line 44, ../scss/style.scss */
-.align-mid, .splashScreen #credit, button, .block-area-top img, .block-area-bottom img, .scoreAnnoucement img {
+.align-mid, .splashScreen #credit, button {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -36,7 +36,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
-  z-index: 99999;
+  z-index: 99999999;
   visibility: visible;
 }
 
@@ -185,38 +185,45 @@ video#bgvid {
 }
 
 /* line 216, ../scss/style.scss */
-.block-area-top, .block-area-bottom, .scoreAnnoucement {
+.block-area-top,
+.block-area-bottom,
+.scoreAnnoucement {
   width: 100vw;
   background-color: black;
   height: 50vh;
   position: fixed;
   z-index: 999;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-/* line 223, ../scss/style.scss */
-.block-area-top img, .block-area-bottom img, .scoreAnnoucement img {
-  top: 15%;
+/* line 228, ../scss/style.scss */
+.block-area-top img,
+.block-area-bottom img,
+.scoreAnnoucement img {
+  height: 80%;
 }
 
-/* line 229, ../scss/style.scss */
+/* line 233, ../scss/style.scss */
 .top-half {
   top: 0;
   visibility: visible;
   box-shadow: 0 12px 0 #0D64AD inset;
 }
-/* line 233, ../scss/style.scss */
+/* line 237, ../scss/style.scss */
 .top-half img {
-  transform: scaleY(-1) scaleX(-1) translate(50%, 0);
+  transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 238, ../scss/style.scss */
+/* line 242, ../scss/style.scss */
 .bottom-half {
   top: 50%;
   visibility: visible;
   box-shadow: 0 -12px 0 #E51F1B inset;
 }
 
-/* line 244, ../scss/style.scss */
+/* line 248, ../scss/style.scss */
 .roundAnnouncement {
   background-color: black;
   width: 100vw;
@@ -230,7 +237,7 @@ video#bgvid {
   z-index: 99999;
   text-align: center;
 }
-/* line 250, ../scss/style.scss */
+/* line 254, ../scss/style.scss */
 .roundAnnouncement span {
   left: 0;
   right: 0;
@@ -240,42 +247,43 @@ video#bgvid {
   text-align: center;
 }
 
-/* line 256, ../scss/style.scss */
+/* line 260, ../scss/style.scss */
 .correctColor {
   background-color: #00C997;
 }
 
-/* line 259, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 .incorrectColor {
   background-color: rgba(0, 0, 0, 0.98);
 }
 
-/* line 262, ../scss/style.scss */
+/* line 268, ../scss/style.scss */
 .redColor {
   color: #E51F1B;
 }
 
-/* line 267, ../scss/style.scss */
+/* line 273, ../scss/style.scss */
 .blueColor {
   color: #0D64AD;
 }
 
 /* ----- Countries title Style + Score ----- */
-/* line 273, ../scss/style.scss */
+/* line 280, ../scss/style.scss */
 .country-title {
   text-align: left;
   font-size: 5vw;
   color: white;
   width: 60vw;
   display: inline-block;
+  text-transform: capitalize;
 }
-/* line 279, ../scss/style.scss */
+/* line 287, ../scss/style.scss */
 .country-title:nth-child(1) {
   margin-left: 20px;
   margin-bottom: 60px;
   margin-top: 40px;
 }
-/* line 284, ../scss/style.scss */
+/* line 292, ../scss/style.scss */
 .country-title:nth-child(2) {
   margin-right: 20px;
   margin-bottom: 40px;
@@ -283,47 +291,47 @@ video#bgvid {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 292, ../scss/style.scss */
+/* line 300, ../scss/style.scss */
 .red-info {
   text-align: center;
 }
 
-/* line 296, ../scss/style.scss */
+/* line 304, ../scss/style.scss */
 .blue-info {
   text-align: center;
 }
 
-/* line 300, ../scss/style.scss */
+/* line 308, ../scss/style.scss */
 .score {
   color: #00C997;
   width: 30vw;
   font-size: 5vw;
   display: inline-block;
 }
-/* line 305, ../scss/style.scss */
+/* line 313, ../scss/style.scss */
 .score:nth-child(2) {
   text-align: right;
 }
-/* line 309, ../scss/style.scss */
+/* line 317, ../scss/style.scss */
 .score:nth-child(1) {
   transform: scaleY(-1) scaleX(-1);
   text-align: right;
 }
 
 /* ----- Countries thumbnails ----- */
-/* line 318, ../scss/style.scss */
+/* line 326, ../scss/style.scss */
 .grid {
   display: block;
   width: 830px;
   text-align: center;
   margin: 0 auto;
 }
-/* line 323, ../scss/style.scss */
+/* line 331, ../scss/style.scss */
 .grid:first-child {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 329, ../scss/style.scss */
+/* line 337, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
@@ -334,7 +342,7 @@ video#bgvid {
   background-position: center;
 }
 
-/* line 339, ../scss/style.scss */
+/* line 347, ../scss/style.scss */
 .correct2 {
   background-color: red;
 }
