@@ -8,20 +8,15 @@ var redScore = 0;
 var blueIsSelected = false,
     redIsSelected = false;
 
-function toggleFullScreen() {
-  var doc = window.document;
-  var docEl = doc.documentElement;
-
-  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-    requestFullScreen.call(docEl);
-  }
-  else {
-    cancelFullScreen.call(doc);
+/*Preload images*/
+$.preloadImages = function() {
+  for (var i = 0; i < arguments.length; i++) {
+    $("<img />").attr("src", arguments[i]);
   }
 }
+
+$.preloadImages("../images/red/correct/1.gif","../images/red/correct/2.gif",);
+
 
 
 /** Check if video is loaded and remove block screen */
@@ -35,8 +30,6 @@ window.addEventListener('load', function () {
                 autoAlpha: 0,
                 delay: "1"
             });
-            toggleFullScreen();
-            document.body.requestFullscreen();
         } else {
             setTimeout(checkLoad, 100);
         }

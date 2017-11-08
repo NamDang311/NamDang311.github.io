@@ -169,22 +169,22 @@ video#bgvid {
   background-color: #24292E;
   height: 50vh;
   width: 100vw;
-  position: relative;
   display: table-cell;
   vertical-align: bottom;
   box-shadow: 0 12px 0 #0D64AD inset, 0 -1px 0 black inset;
 }
 
-/* line 207, ../scss/style.scss */
+/* line 205, ../scss/style.scss */
 .red-area {
   width: 100vw;
   background-color: #24292E;
   height: 50vh;
+  top: 50%;
   position: fixed;
   box-shadow: 0 -12px 0 #E51F1B inset, 0 1px 0 black inset;
 }
 
-/* line 216, ../scss/style.scss */
+/* line 215, ../scss/style.scss */
 .block-area-top,
 .block-area-bottom,
 .scoreAnnoucement {
@@ -198,32 +198,32 @@ video#bgvid {
   justify-content: center;
   align-items: center;
 }
-/* line 228, ../scss/style.scss */
+/* line 227, ../scss/style.scss */
 .block-area-top img,
 .block-area-bottom img,
 .scoreAnnoucement img {
   height: 80%;
 }
 
-/* line 233, ../scss/style.scss */
+/* line 232, ../scss/style.scss */
 .top-half {
   top: 0;
   visibility: visible;
   box-shadow: 0 12px 0 #0D64AD inset;
 }
-/* line 237, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
 .top-half img {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 242, ../scss/style.scss */
+/* line 241, ../scss/style.scss */
 .bottom-half {
   top: 50%;
   visibility: visible;
   box-shadow: 0 -12px 0 #E51F1B inset;
 }
 
-/* line 248, ../scss/style.scss */
+/* line 247, ../scss/style.scss */
 .roundAnnouncement {
   background-color: black;
   width: 100vw;
@@ -237,7 +237,7 @@ video#bgvid {
   z-index: 99999;
   text-align: center;
 }
-/* line 254, ../scss/style.scss */
+/* line 253, ../scss/style.scss */
 .roundAnnouncement span {
   left: 0;
   right: 0;
@@ -247,28 +247,28 @@ video#bgvid {
   text-align: center;
 }
 
-/* line 260, ../scss/style.scss */
+/* line 259, ../scss/style.scss */
 .correctColor {
   background-color: #00C997;
 }
 
-/* line 264, ../scss/style.scss */
+/* line 263, ../scss/style.scss */
 .incorrectColor {
   background-color: rgba(0, 0, 0, 0.98);
 }
 
-/* line 268, ../scss/style.scss */
+/* line 267, ../scss/style.scss */
 .redColor {
   color: #E51F1B;
 }
 
-/* line 273, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 .blueColor {
   color: #0D64AD;
 }
 
 /* ----- Countries title Style + Score ----- */
-/* line 280, ../scss/style.scss */
+/* line 279, ../scss/style.scss */
 .country-title {
   text-align: left;
   font-size: 5vw;
@@ -277,13 +277,13 @@ video#bgvid {
   display: inline-block;
   text-transform: capitalize;
 }
-/* line 287, ../scss/style.scss */
+/* line 286, ../scss/style.scss */
 .country-title:nth-child(1) {
   margin-left: 20px;
   margin-bottom: 60px;
   margin-top: 40px;
 }
-/* line 292, ../scss/style.scss */
+/* line 291, ../scss/style.scss */
 .country-title:nth-child(2) {
   margin-right: 20px;
   margin-bottom: 40px;
@@ -291,47 +291,47 @@ video#bgvid {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 300, ../scss/style.scss */
+/* line 299, ../scss/style.scss */
 .red-info {
   text-align: center;
 }
 
-/* line 304, ../scss/style.scss */
+/* line 303, ../scss/style.scss */
 .blue-info {
   text-align: center;
 }
 
-/* line 308, ../scss/style.scss */
+/* line 307, ../scss/style.scss */
 .score {
   color: #00C997;
   width: 30vw;
   font-size: 5vw;
   display: inline-block;
 }
-/* line 313, ../scss/style.scss */
+/* line 312, ../scss/style.scss */
 .score:nth-child(2) {
   text-align: right;
 }
-/* line 317, ../scss/style.scss */
+/* line 316, ../scss/style.scss */
 .score:nth-child(1) {
   transform: scaleY(-1) scaleX(-1);
   text-align: right;
 }
 
 /* ----- Countries thumbnails ----- */
-/* line 326, ../scss/style.scss */
+/* line 325, ../scss/style.scss */
 .grid {
   display: block;
   width: 830px;
   text-align: center;
   margin: 0 auto;
 }
-/* line 331, ../scss/style.scss */
+/* line 330, ../scss/style.scss */
 .grid:first-child {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 337, ../scss/style.scss */
+/* line 336, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
@@ -342,7 +342,7 @@ video#bgvid {
   background-position: center;
 }
 
-/* line 347, ../scss/style.scss */
+/* line 346, ../scss/style.scss */
 .correct2 {
   background-color: red;
 }
