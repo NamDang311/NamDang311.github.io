@@ -212,6 +212,16 @@ video#bgvid {
 
 }
 
+#countdown {
+    position: absolute;
+    height:1vh;
+    width:0;
+    background-color: $yellow;
+    z-index: 98;
+    transform: translate(0,-0.5vh)
+}
+
+
 .block-area-top,
 .block-area-bottom,
 .scoreAnnoucement {
@@ -324,7 +334,7 @@ video#bgvid {
 
 .grid {
     display: block;
-    width: 830px;
+    width: 870px;
     text-align: center;
     margin: 0 auto;
     &:first-child {
@@ -337,7 +347,7 @@ video#bgvid {
     cursor: pointer;
     width: 200px;
     height: 160px;
-    background-color: bisque;
+    background-color: $dark;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

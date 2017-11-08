@@ -9,16 +9,17 @@ var blueIsSelected = false,
     redIsSelected = false;
 
 /*Preload images*/
+var imgs = [];
+var preloadState = false;
+for (z=1;z<6;z++){ imgs.push("../images/red/correct/"+z+".gif")
+imgs.push("../images/red/incorrect/"+z+".gif")
+imgs.push("../images/blue/correct/"+z+".gif")
+imgs.push("../images/blue/incorrect/"+z+".gif");
+};
 
-//preload 3 images:
-// use whatever callback you really want as the argument
-
-var imgs = ["../images/red/correct/1.gif", "../images/red/correct/2.gif"];
-
-$.preload(imgs);
 $.preload(imgs, {
     all: function () {
-        alert("Asd")
+        preloadState = true;
     }
 })
 
@@ -29,7 +30,7 @@ window.addEventListener('load', function () {
     var preloader = document.querySelector('.blockScreen');
 
     function checkLoad() {
-        if (video.readyState === 4) {
+        if (video.readyState === 4 && preloadState === true) {
             TweenMax.to(".blockScreen", 0.3, {
                 autoAlpha: 0,
                 delay: "1"
@@ -67,8 +68,9 @@ $("#startButton").on("click touchstart", function (event) {
     }, 1);
 });
 
-var readyGoText = new TimelineMax({});
 
+// First ready-go stage motion
+var readyGoText = new TimelineMax({});
 function setStage() {
     playSetSound();
     readyGoText.to("#readyTitle", 0.4, {
@@ -83,9 +85,13 @@ function setStage() {
             TweenMax.to(".readyStage", 0.3, {
                 autoAlpha: 0
             });
+            
+            //run countdown 
+            countdown.play();
         }
     }, "+=1");
 }
+
 readyGoText.set(".readyStage", {
     perspective: 1000
 }).set("#readyTitle", {
@@ -110,7 +116,7 @@ var $grid = $('.grid').isotope({
     },
     layoutMode: 'fitRows',
     fitRows: {
-        gutter: 10
+        gutter: 20
     },
     transitionDuration: '0.2s',
     sortBy: 'random'
@@ -124,8 +130,8 @@ setInterval(function () {
     $grid.isotope('shuffle');
 }, 1000);
 
-/** Database -> Set base for set 1/2 */
-var countries = ["australia", "brazil", "china", "germany", "great britain", "india", "Iran", "Kenya", "New Zealand", "Pakistan", "Poland", "Russia", "South Africa", "Ukraine", "Vietnam"];
+/** Countries Database */
+var countries = ["","tanzania", "mauritius", "estonia", "brunei", "uzbekistn","melilla"];
 
 //Title
 $(".country-title").html(countries[currentRound]);
@@ -142,16 +148,15 @@ loadCorrectImg();
 var newArrImg;
 
 function loadRandomImg() {
-    newArrImg = _.sample(_.range(1, 195), 6);
-    console.log(newArrImg);
+    newArrImg = _.sample(_.range(1, 260), 6);
     for (var i = 2; i < 5; i++) {
         $(".selection-blocks-" + i).css("background-image", "url(../images/flags/random/" + newArrImg[i] + ".png)");
     }
 };
 loadRandomImg();
+
+
 /** Score system */
-
-
 function updateScore() {
     $(".red-score").html(redScore);
     $(".blue-score").html(blueScore);
@@ -173,6 +178,7 @@ function checkSide(value, sideNumber) {
             showRedBlock("incorrect", 0);
 
             //Move next around
+            countdown.pause();
             _.delay(setNextRound, 4000);
 
         } else { // On red side
@@ -186,8 +192,10 @@ function checkSide(value, sideNumber) {
             showBlueBlock("incorrect", 0);
 
             //Move next around
+            countdown.pause();
             _.delay(setNextRound, 4000);
         }
+        
     } else { //If click incorrect option
         if (sideNumber < 3) { //On blue side
             showBlueBlock("incorrect");
@@ -280,6 +288,11 @@ finishGame.to(".roundAnnouncement", 0.4, {
     autoAlpha: 1
 }, "+=1.5");
 
+var countdown = new TimelineMax({
+    paused: true, repeat:-1, onComplete: setNextRound
+});
+countdown.fromTo ("#countdown",10,{width:"0"},{width:"100%",ease:Power0.easeNone});
+
 function setNextRound() {
     if (currentRound === maxRound) {
         // if max round reached, declare winner
@@ -294,10 +307,11 @@ function setNextRound() {
         }
 
     } else {
-        //continue
+        //continue next round
         currentRound++;
         $("#roundCall").html("Round " + currentRound);
         roundDeclare.play(0);
+        countdown.play(0);
         currentimgName = countries[currentRound].replace(" ", "%20");
         $(".country-title").html(countries[currentRound]);
         loadCorrectImg();
