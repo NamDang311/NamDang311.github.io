@@ -9,14 +9,18 @@ var blueIsSelected = false,
     redIsSelected = false;
 
 /*Preload images*/
-$.preloadImages = function() {
-  for (var i = 0; i < arguments.length; i++) {
-    $("<img />").attr("src", arguments[i]);
-  }
-}
 
-$.preloadImages("../images/red/correct/1.gif","../images/red/correct/2.gif",);
+//preload 3 images:
+// use whatever callback you really want as the argument
 
+var imgs = ["../images/red/correct/1.gif", "../images/red/correct/2.gif"];
+
+$.preload(imgs);
+$.preload(imgs, {
+    all: function () {
+        alert("Asd")
+    }
+})
 
 
 /** Check if video is loaded and remove block screen */
@@ -128,6 +132,7 @@ $(".country-title").html(countries[currentRound]);
 
 //1st - Load correct image
 var currentimgName = countries[currentRound].replace(" ", "%20");
+
 function loadCorrectImg() {
     $(".correct").css("background-image", "url(../images/flags/" + currentimgName + ".png)");
 }
@@ -137,8 +142,8 @@ loadCorrectImg();
 var newArrImg;
 
 function loadRandomImg() {
-    newArrImg = _.sample(_.range(1,195), 6);
-    console.log (newArrImg);
+    newArrImg = _.sample(_.range(1, 195), 6);
+    console.log(newArrImg);
     for (var i = 2; i < 5; i++) {
         $(".selection-blocks-" + i).css("background-image", "url(../images/flags/random/" + newArrImg[i] + ".png)");
     }
@@ -263,27 +268,31 @@ roundDeclare.to(".roundAnnouncement", 0.4, {
     autoAlpha: 0
 });
 
-var finishGame = new TimelineMax ({paused:true});
+var finishGame = new TimelineMax({
+    paused: true
+});
 TweenMax.set("#finalCall", {
     autoAlpha: 0
 });
 finishGame.to(".roundAnnouncement", 0.4, {
     autoAlpha: 1,
-}).to("#finalCall",4,{autoAlpha:1},"+=1.5");
+}).to("#finalCall", 4, {
+    autoAlpha: 1
+}, "+=1.5");
 
 function setNextRound() {
     if (currentRound === maxRound) {
         // if max round reached, declare winner
-        if (redScore > blueScore){
-        $("#finalCall").html("Winner<br/>Red Team");
-          $("#finalCall").addClass("redColor");  
-        finishGame.play(0);
+        if (redScore > blueScore) {
+            $("#finalCall").html("Winner<br/>Red Team");
+            $("#finalCall").addClass("redColor");
+            finishGame.play(0);
         } else {
             $("#finalCall").html("Blue Team<br/>Win");
-             $("#finalCall").addClass("blueColor"); 
-        finishGame.play(0);
+            $("#finalCall").addClass("blueColor");
+            finishGame.play(0);
         }
-        
+
     } else {
         //continue
         currentRound++;
