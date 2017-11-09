@@ -294,7 +294,7 @@ finishGame.to(".roundAnnouncement", 0.4, {
 var countdown = new TimelineMax({
     paused: true,
 });
-countdown.fromTo("#countdown", 5, {
+countdown.fromTo("#countdown", 10, {
     width: "0"
 }, {
     width: "100%",
