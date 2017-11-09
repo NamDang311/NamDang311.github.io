@@ -36,7 +36,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
-  z-index: 99999999;
+  z-index: 9999999999;
   visibility: visible;
 }
 
@@ -44,7 +44,7 @@ body {
 .splashScreen {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top: 0;
   visibility: visible;

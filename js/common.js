@@ -13,9 +13,9 @@ var imgs = [];
 var preloadState = false;
 for (var z = 1; z < 6; z++) {
     imgs.push("../images/red/correct/" + z + ".gif");
-    imgs.push("../images/red/incorrect/" + z + ".gif");
-    imgs.push("../images/blue/correct/" + z + ".gif");
-    imgs.push("../images/blue/incorrect/" + z + ".gif");
+//    imgs.push("../images/red/incorrect/" + z + ".gif");
+//    imgs.push("../images/blue/correct/" + z + ".gif");
+//    imgs.push("../images/blue/incorrect/" + z + ".gif");
 }
 
 $.preload(imgs, {
@@ -33,7 +33,6 @@ window.addEventListener('load', function () {
         if (preloadState === true) {
             TweenMax.to(".blockScreen", 0.3, {
                 autoAlpha: 0,
-                delay: "1"
             });
         } else {
             setTimeout(checkLoad, 100);
