@@ -20,7 +20,7 @@ $countryfontSize:5vw;
     background-color: rgba(0, 0, 0, 1);
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
 
 }
@@ -36,7 +36,7 @@ $countryfontSize:5vw;
     right: 0;
     margin: auto;
     position: absolute;
-    top: 35%;
+    top: 30%;
 }
 
 
@@ -206,7 +206,7 @@ button:focus {
     top:0;
     display: table-cell;
     vertical-align: bottom;
-    box-shadow: 0 12px 0 $blue inset, 0 -1px 0 black inset;
+    box-shadow: 0 20px 0 $blue inset, 0 -1px 0 black inset;
     padding-top: 170px;
 }
 
@@ -216,12 +216,12 @@ button:focus {
     height: 50vh;
     top: 50%;
     position: fixed;
-    box-shadow: 0 -12px 0 $red inset, 0 1px 0 black inset;
+    box-shadow: 0 -20px 0 $red inset, 0 1px 0 black inset;
 
 }
 
 #countdown {
-    position: absolute;
+    position: fixed;
     height: 1vh;
     width: 0;
     top:50%;

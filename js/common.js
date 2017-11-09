@@ -13,9 +13,9 @@ var imgs = [];
 var preloadState = false;
 for (var z = 1; z < 6; z++) {
     imgs.push("../images/red/correct/" + z + ".gif");
-//    imgs.push("../images/red/incorrect/" + z + ".gif");
-//    imgs.push("../images/blue/correct/" + z + ".gif");
-//    imgs.push("../images/blue/incorrect/" + z + ".gif");
+    imgs.push("../images/red/incorrect/" + z + ".gif");
+    imgs.push("../images/blue/correct/" + z + ".gif");
+    imgs.push("../images/blue/incorrect/" + z + ".gif");
 }
 
 $.preload(imgs, {
@@ -44,9 +44,12 @@ window.addEventListener('load', function () {
 /** Opening Splash Screen */
 $(document).ready(function () {
     TweenMax.fromTo("#startButton", 1, {
-        opacity:0
+        opacity: 0
     }, {
-        opacity:1,repeat:-1,yoyo:true,repeatDelay:0.5
+        opacity: 1,
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 0.5
     });
 });
 
@@ -269,7 +272,10 @@ roundDeclare.to(".roundAnnouncement", 0, {
 }).to("#roundCall", 0.2, {
     y: "+=450%"
 }, "+=1").to(".roundAnnouncement", 0.4, {
-    autoAlpha: 0,onComplete: function (){countdown.play(0);}
+    autoAlpha: 0,
+    onComplete: function () {
+        countdown.play(0);
+    }
 });
 
 var finishGame = new TimelineMax({
@@ -285,13 +291,14 @@ finishGame.to(".roundAnnouncement", 0.4, {
 }, "+=1.5");
 
 var countdown = new TimelineMax({
-    paused: true,   
+    paused: true,
 });
 countdown.fromTo("#countdown", 5, {
     width: "0"
 }, {
     width: "100%",
-    ease: Power0.easeNone, onComplete: setNextRound
+    ease: Power0.easeNone,
+    onComplete: setNextRound
 });
 
 function setNextRound() {
@@ -303,9 +310,15 @@ function setNextRound() {
             $("#finalCall").addClass("redColor");
             finishGame.play(0);
         } else {
-            $("#finalCall").html("Blue Team<br/>Win");
-            $("#finalCall").addClass("blueColor");
-            finishGame.play(0);
+            if (redScore == blueScore) {
+                $("#finalCall").html("DRAW");
+                finishGame.play(0);
+
+            } else {
+                $("#finalCall").html("Blue Team<br/>Win");
+                $("#finalCall").addClass("blueColor");
+                finishGame.play(0);
+            }
         }
 
     } else {
