@@ -245,7 +245,7 @@ button:focus {
   font-size: 12em;
   color: white;
   font-family: "super_mario_256regular";
-  font-size: 10em;
+  font-size: 8em;
   z-index: 99999;
   text-align: center;
 }
@@ -255,7 +255,7 @@ button:focus {
   right: 0;
   margin: auto;
   position: absolute;
-  top: 30%;
+  top: 20%;
   text-align: center;
 }
 

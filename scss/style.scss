@@ -36,7 +36,7 @@ $countryfontSize:5vw;
     right: 0;
     margin: auto;
     position: absolute;
-    top: 30%;
+    top: 20%;
 }
 
 
@@ -266,7 +266,7 @@ button:focus {
 .roundAnnouncement {
     @include overlay();
     @include fontMario();
-    font-size: 10em;
+    font-size: 8em;
     z-index: 99999;
     text-align: center;
     span {

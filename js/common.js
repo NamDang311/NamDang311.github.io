@@ -268,9 +268,9 @@ roundDeclare.to(".roundAnnouncement", 0, {
     autoAlpha: 1,
     onComplete: resetSideBlock
 }).from("#roundCall", 0.2, {
-    y: "-=450%"
+    y: "-=500%"
 }).to("#roundCall", 0.2, {
-    y: "+=450%"
+    y: "+=500%"
 }, "+=1").to(".roundAnnouncement", 0.4, {
     autoAlpha: 0,
     onComplete: function () {
