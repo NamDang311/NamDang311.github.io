@@ -13,9 +13,9 @@ var imgs = [];
 var preloadState = false;
 for (var z = 1; z < 6; z++) {
     imgs.push("../images/red/correct/" + z + ".gif");
-//    imgs.push("../images/red/incorrect/" + z + ".gif");
-//    imgs.push("../images/blue/correct/" + z + ".gif");
-//    imgs.push("../images/blue/incorrect/" + z + ".gif");
+    imgs.push("../images/red/incorrect/" + z + ".gif");
+    imgs.push("../images/blue/correct/" + z + ".gif");
+    imgs.push("../images/blue/incorrect/" + z + ".gif");
 }
 
 $.preload(imgs, {
