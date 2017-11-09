@@ -167,12 +167,15 @@ button:focus {
   background-color: #24292E;
   height: 50vh;
   width: 100vw;
+  position: fixed;
+  top: 0;
   display: table-cell;
   vertical-align: bottom;
   box-shadow: 0 12px 0 #0D64AD inset, 0 -1px 0 black inset;
+  padding-top: 170px;
 }
 
-/* line 210, ../scss/style.scss */
+/* line 213, ../scss/style.scss */
 .red-area {
   width: 100vw;
   background-color: #24292E;
@@ -182,17 +185,18 @@ button:focus {
   box-shadow: 0 -12px 0 #E51F1B inset, 0 1px 0 black inset;
 }
 
-/* line 220, ../scss/style.scss */
+/* line 223, ../scss/style.scss */
 #countdown {
   position: absolute;
   height: 1vh;
   width: 0;
+  top: 50%;
   background-color: #e7deaf;
   z-index: 98;
   transform: translate(0, -0.5vh);
 }
 
-/* line 230, ../scss/style.scss */
+/* line 234, ../scss/style.scss */
 .block-area-top,
 .block-area-bottom,
 .scoreAnnoucement {
@@ -206,32 +210,32 @@ button:focus {
   justify-content: center;
   align-items: center;
 }
-/* line 242, ../scss/style.scss */
+/* line 246, ../scss/style.scss */
 .block-area-top img,
 .block-area-bottom img,
 .scoreAnnoucement img {
   height: 80%;
 }
 
-/* line 247, ../scss/style.scss */
+/* line 251, ../scss/style.scss */
 .top-half {
   top: 0;
   visibility: visible;
   box-shadow: 0 12px 0 #0D64AD inset;
 }
-/* line 251, ../scss/style.scss */
+/* line 255, ../scss/style.scss */
 .top-half img {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 256, ../scss/style.scss */
+/* line 260, ../scss/style.scss */
 .bottom-half {
   top: 50%;
   visibility: visible;
   box-shadow: 0 -12px 0 #E51F1B inset;
 }
 
-/* line 262, ../scss/style.scss */
+/* line 266, ../scss/style.scss */
 .roundAnnouncement {
   background-color: black;
   width: 100vw;
@@ -245,7 +249,7 @@ button:focus {
   z-index: 99999;
   text-align: center;
 }
-/* line 268, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 .roundAnnouncement span {
   left: 0;
   right: 0;
@@ -255,28 +259,28 @@ button:focus {
   text-align: center;
 }
 
-/* line 274, ../scss/style.scss */
+/* line 278, ../scss/style.scss */
 .correctColor {
   background-color: #00C997;
 }
 
-/* line 278, ../scss/style.scss */
+/* line 282, ../scss/style.scss */
 .incorrectColor {
   background-color: rgba(0, 0, 0, 0.98);
 }
 
-/* line 282, ../scss/style.scss */
+/* line 286, ../scss/style.scss */
 .redColor {
   color: #E51F1B;
 }
 
-/* line 287, ../scss/style.scss */
+/* line 291, ../scss/style.scss */
 .blueColor {
   color: #0D64AD;
 }
 
 /* ----- Countries title Style + Score ----- */
-/* line 294, ../scss/style.scss */
+/* line 298, ../scss/style.scss */
 .country-title {
   text-align: left;
   font-size: 5vw;
@@ -285,13 +289,13 @@ button:focus {
   display: inline-block;
   text-transform: capitalize;
 }
-/* line 301, ../scss/style.scss */
+/* line 305, ../scss/style.scss */
 .country-title:nth-child(1) {
   margin-left: 20px;
   margin-bottom: 60px;
   margin-top: 40px;
 }
-/* line 306, ../scss/style.scss */
+/* line 310, ../scss/style.scss */
 .country-title:nth-child(2) {
   margin-right: 20px;
   margin-bottom: 40px;
@@ -299,47 +303,47 @@ button:focus {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 314, ../scss/style.scss */
+/* line 318, ../scss/style.scss */
 .red-info {
   text-align: center;
 }
 
-/* line 318, ../scss/style.scss */
+/* line 322, ../scss/style.scss */
 .blue-info {
   text-align: center;
 }
 
-/* line 322, ../scss/style.scss */
+/* line 326, ../scss/style.scss */
 .score {
   color: #00C997;
   width: 30vw;
   font-size: 5vw;
   display: inline-block;
 }
-/* line 327, ../scss/style.scss */
+/* line 331, ../scss/style.scss */
 .score:nth-child(2) {
   text-align: right;
 }
-/* line 331, ../scss/style.scss */
+/* line 335, ../scss/style.scss */
 .score:nth-child(1) {
   transform: scaleY(-1) scaleX(-1);
   text-align: right;
 }
 
 /* ----- Countries thumbnails ----- */
-/* line 340, ../scss/style.scss */
+/* line 344, ../scss/style.scss */
 .grid {
   display: block;
   width: 870px;
   text-align: center;
   margin: 0 auto;
 }
-/* line 345, ../scss/style.scss */
+/* line 349, ../scss/style.scss */
 .grid:first-child {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 351, ../scss/style.scss */
+/* line 355, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
@@ -350,7 +354,7 @@ button:focus {
   background-position: center;
 }
 
-/* line 361, ../scss/style.scss */
+/* line 365, ../scss/style.scss */
 .correct2 {
   background-color: red;
 }
