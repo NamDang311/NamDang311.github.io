@@ -61,7 +61,7 @@ $("#startButton").on("click touchstart", function (event) {
     }, 1);
     TweenMax.to(".guide", 1, {
         autoAlpha: 0,
-        delay: 5,
+        delay: 10,
         onComplete: setStage
     }, 1);
 });
@@ -211,6 +211,7 @@ function checkNumberOfWrong() {
         numberOfWrong++;
     } else {
         _.delay(setNextRound, 4000);
+        countdown.pause();
         numberOfWrong = 0;
     }
 
