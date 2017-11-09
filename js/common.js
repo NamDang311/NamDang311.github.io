@@ -248,8 +248,8 @@ function showRedBlock(checkResult, showImage) {
 
 function resetSideBlock() {
     //Clear img src
-    $(".block-area-bottom img").attr(`src`, `#`);
-    $(".block-area-top img").attr(`src`, `#`);
+    $(".block-area-bottom img").attr(`src`, `../images/placeholder.png`);
+    $(".block-area-top img").attr(`src`, `../images/placeholder.png`);
 
     //Clear side block
     $(".block-area-top").removeClass('correctColor incorrectColor top-half');
@@ -311,7 +311,7 @@ function setNextRound() {
             finishGame.play(0);
         } else {
             if (redScore == blueScore) {
-                $("#finalCall").html("DRAW");
+                $("#finalCall").html("<br/>DRAW");
                 finishGame.play(0);
 
             } else {
