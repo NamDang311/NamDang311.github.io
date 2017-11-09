@@ -59,13 +59,14 @@ $("#startButton").on("click touchstart", function (event) {
         autoAlpha: 0,
         delay: 1
     }, 1);
+});
+
+$(".guide").on("click touchstart", function (){
     TweenMax.to(".guide", 1, {
         autoAlpha: 0,
-        delay: 10,
         onComplete: setStage
     }, 1);
 });
-
 
 // First ready-go stage motion
 var readyGoText = new TimelineMax({});
@@ -100,13 +101,13 @@ readyGoText.set(".readyStage", {
 });
 
 
-var animation = bodymovin.loadAnimation({
-    container: document.getElementById('loadingContainer'), // the dom element that will contain the animation
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'data/loading.json' // the path to the animation json
-});
+//var animation = bodymovin.loadAnimation({
+//    container: document.getElementById('loadingContainer'), // the dom element that will contain the animation
+//    renderer: 'svg',
+//    loop: true,
+//    autoplay: true,
+//    path: 'data/loading.json' // the path to the animation json
+//});
 
 //Set grid
 var $grid = $('.grid').isotope({
