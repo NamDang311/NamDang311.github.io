@@ -4,8 +4,12 @@ var normalTune = new Howl({
     src: ['../sound/btnclick.wav'],
 });
 
-$("button").on("click touchstart", function (event) {
+function buttonSound(){
     normalTune.play();
+}
+$("button").on("click touchstart", function (event) {
+    var throttled = _.throttle(buttonSound, 1000);
+    
 });
 
 /** Play sound when making selection */
