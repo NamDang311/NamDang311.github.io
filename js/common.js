@@ -130,7 +130,7 @@ setInterval(function () {
 }, 1000);
 
 /** Countries Database */
-var countries = ["", "tanzania", "mauritius", "estonia", "brunei", "uzbekistn", "melilla"];
+var countries = ["", "russia", "china", "cuba", "indonesia", "morocco", "estonia"];
 
 //Title
 $(".country-title").html(countries[currentRound]);
@@ -147,7 +147,7 @@ loadCorrectImg();
 var newArrImg;
 
 function loadRandomImg() {
-    newArrImg = _.sample(_.range(1, 260), 6);
+    newArrImg = _.sample(_.range(1, 254), 6);
     for (var i = 2; i < 5; i++) {
         $(".selection-blocks-" + i).css("background-image", "url(../images/flags/random/" + newArrImg[i] + ".png)");
     }
@@ -302,6 +302,17 @@ countdown.fromTo("#countdown", 10, {
     onComplete: setNextRound
 });
 
+var endingSound = new Howl({
+    src: ['../sound/roundwinner.mp3'],
+     
+});
+
+function playEndSound(){
+    sceneSound_1.stop();
+    sceneSound_2.stop();
+    sceneSound_3.stop();
+    endingSound.play();
+}
 function setNextRound() {
     countdown.stop(0);
     if (currentRound === maxRound) {
@@ -310,15 +321,18 @@ function setNextRound() {
             $("#finalCall").html("Winner<br/>Red Team");
             $("#finalCall").addClass("redColor");
             finishGame.play(0);
+            playEndSound();
         } else {
             if (redScore == blueScore) {
                 $("#finalCall").html("<br/>DRAW");
                 finishGame.play(0);
+                playEndSound();
 
             } else {
                 $("#finalCall").html("Blue Team<br/>Win");
                 $("#finalCall").addClass("blueColor");
                 finishGame.play(0);
+                playEndSound();
             }
         }
 
