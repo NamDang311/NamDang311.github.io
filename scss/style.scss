@@ -80,35 +80,63 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: 99999;
+    z-index: 9999;
     top: 0;
     visibility: $skip;
-    #introTypo {
-        margin: 20px auto;
-        width: 50vw;
-        position: relative;
+    background: $dark url("../images/bg.png") no-repeat fixed top;
+
+    .sliding-wrap {
+        overflow: hidden;
+        width: 846px;
+        height: 173px;
+        position: absolute;
+        @extend .align-mid;
+        bottom: 20%;
+        -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    }
+
+
+
+    .sliding-flags {
+        background: url("../images/flags-bg.png") repeat-x;
+        height: 173px;
+        width: 5076px;
+        animation: slide 60s linear infinite;
     }
     #credit {
         @extend .align-mid;
         bottom: 5%;
+        color: white;
+        opacity: .5;
+        letter-spacing: 1em;
         white-space: nowrap;
+    }
+
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-1692px, 0, 0);
     }
 }
 
 button {
-    font-family: 'Bangers', cursive;
+    font-family: "super_mario_256regular";
     letter-spacing: 0.2em;
     padding-bottom: 6px;
     cursor: pointer;
     font-size: 1.4em;
     font-weight: 700;
-    color: black;
+    color: white;
     text-align: center;
-    background: url("../images/2x/buttonBG@2x.png") no-repeat;
+    background: transparent;
     background-size: contain;
     bottom: 12%;
     border-radius: 0px;
-    width: 240px;
+    width: 340px;
     height: 60px;
     text-decoration: none;
     border: none;
@@ -120,54 +148,31 @@ button:focus {
     outline: none;
 }
 
-
-video#bgvid {
-    visibility: $skip;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    //    background: url(images/bg.jpg) no-repeat;
-    background-size: cover;
-
-}
-
 /* ----- How to play ----- */
 
 .guide {
     visibility: $skip;
     position: absolute;
     top: 0;
-    z-index: 999;
-    background-color: $orange;
+    z-index: 998;
+    background: $dark url("../images/howtoplay.png") no-repeat fixed top;
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     h3 {
         text-align: center;
         font-size: 2em;
         margin: 30px auto;
+        color: white;
     }
-    img {
-        cursor: pointer !important;
-        display: block;
-        width: 65vh;
-        margin: 0 auto 20px auto;
-    }
+    
 }
 
 #loadingContainer {
+    @extend .align-mid;
     visibility: $skip;
-    margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    bottom:10%;
+    width: 50px;
 }
 
 /* ----- Staging ----- */
@@ -206,7 +211,7 @@ video#bgvid {
     width: 100vw;
     background-color: $dark;
     height: 50vh;
-    top:50%;
+    top: 50%;
     position: fixed;
     box-shadow: 0 -12px 0 $red inset, 0 1px 0 black inset;
 
@@ -214,11 +219,11 @@ video#bgvid {
 
 #countdown {
     position: absolute;
-    height:1vh;
-    width:0;
+    height: 1vh;
+    width: 0;
     background-color: $yellow;
     z-index: 98;
-    transform: translate(0,-0.5vh)
+    transform: translate(0, -0.5vh)
 }
 
 
@@ -232,10 +237,10 @@ video#bgvid {
     z-index: 999;
     visibility: hidden;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     img {
-        height:80%;
+        height: 80%;
     }
 }
 

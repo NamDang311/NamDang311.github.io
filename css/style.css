@@ -2,7 +2,7 @@
 /* ----- Settings ----- */
 /* ----- General ----- */
 /* line 44, ../scss/style.scss */
-.align-mid, .splashScreen #credit, button {
+.align-mid, .splashScreen .sliding-wrap, .splashScreen #credit, button, #loadingContainer {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -45,100 +45,98 @@ body {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: 99999;
+  z-index: 9999;
   top: 0;
   visibility: visible;
+  background: #24292E url("../images/bg.png") no-repeat fixed top;
 }
-/* line 86, ../scss/style.scss */
-.splashScreen #introTypo {
-  margin: 20px auto;
-  width: 50vw;
-  position: relative;
+/* line 88, ../scss/style.scss */
+.splashScreen .sliding-wrap {
+  overflow: hidden;
+  width: 846px;
+  height: 173px;
+  position: absolute;
+  bottom: 20%;
+  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, black 10%, black 90%, transparent 100%);
 }
-/* line 91, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
+.splashScreen .sliding-flags {
+  background: url("../images/flags-bg.png") repeat-x;
+  height: 173px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
+}
+/* line 106, ../scss/style.scss */
 .splashScreen #credit {
   bottom: 5%;
+  color: white;
+  opacity: .5;
+  letter-spacing: 1em;
   white-space: nowrap;
 }
 
-/* line 98, ../scss/style.scss */
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+/* line 126, ../scss/style.scss */
 button {
-  font-family: 'Bangers', cursive;
+  font-family: "super_mario_256regular";
   letter-spacing: 0.2em;
   padding-bottom: 6px;
   cursor: pointer;
   font-size: 1.4em;
   font-weight: 700;
-  color: black;
+  color: white;
   text-align: center;
-  background: url("../images/2x/buttonBG@2x.png") no-repeat;
+  background: transparent;
   background-size: contain;
   bottom: 12%;
   border-radius: 0px;
-  width: 240px;
+  width: 340px;
   height: 60px;
   text-decoration: none;
   border: none;
 }
 
-/* line 119, ../scss/style.scss */
+/* line 147, ../scss/style.scss */
 button:focus {
   outline: none;
 }
 
-/* line 124, ../scss/style.scss */
-video#bgvid {
-  visibility: visible;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background-size: cover;
-}
-
 /* ----- How to play ----- */
-/* line 145, ../scss/style.scss */
+/* line 153, ../scss/style.scss */
 .guide {
   visibility: visible;
   position: absolute;
   top: 0;
-  z-index: 999;
-  background-color: #fb754d;
+  z-index: 998;
+  background: #24292E url("../images/howtoplay.png") no-repeat fixed top;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 }
-/* line 153, ../scss/style.scss */
+/* line 162, ../scss/style.scss */
 .guide h3 {
   text-align: center;
   font-size: 2em;
   margin: 30px auto;
-}
-/* line 158, ../scss/style.scss */
-.guide img {
-  cursor: pointer !important;
-  display: block;
-  width: 65vh;
-  margin: 0 auto 20px auto;
+  color: white;
 }
 
-/* line 166, ../scss/style.scss */
+/* line 171, ../scss/style.scss */
 #loadingContainer {
   visibility: visible;
-  margin: 0 auto;
-  width: 80px;
-  height: 80px;
+  bottom: 10%;
+  width: 50px;
 }
 
 /* ----- Staging ----- */
-/* line 175, ../scss/style.scss */
+/* line 180, ../scss/style.scss */
 .readyStage {
   visibility: visible;
   z-index: 99;
@@ -149,7 +147,7 @@ video#bgvid {
   position: absolute;
   top: 0;
 }
-/* line 180, ../scss/style.scss */
+/* line 185, ../scss/style.scss */
 .readyStage span {
   left: 0;
   right: 0;
@@ -164,7 +162,7 @@ video#bgvid {
 }
 
 /* ----- Setting area ----- */
-/* line 196, ../scss/style.scss */
+/* line 201, ../scss/style.scss */
 .blue-area {
   background-color: #24292E;
   height: 50vh;
@@ -174,7 +172,7 @@ video#bgvid {
   box-shadow: 0 12px 0 #0D64AD inset, 0 -1px 0 black inset;
 }
 
-/* line 205, ../scss/style.scss */
+/* line 210, ../scss/style.scss */
 .red-area {
   width: 100vw;
   background-color: #24292E;
@@ -184,7 +182,7 @@ video#bgvid {
   box-shadow: 0 -12px 0 #E51F1B inset, 0 1px 0 black inset;
 }
 
-/* line 215, ../scss/style.scss */
+/* line 220, ../scss/style.scss */
 #countdown {
   position: absolute;
   height: 1vh;
@@ -194,7 +192,7 @@ video#bgvid {
   transform: translate(0, -0.5vh);
 }
 
-/* line 225, ../scss/style.scss */
+/* line 230, ../scss/style.scss */
 .block-area-top,
 .block-area-bottom,
 .scoreAnnoucement {
@@ -208,32 +206,32 @@ video#bgvid {
   justify-content: center;
   align-items: center;
 }
-/* line 237, ../scss/style.scss */
+/* line 242, ../scss/style.scss */
 .block-area-top img,
 .block-area-bottom img,
 .scoreAnnoucement img {
   height: 80%;
 }
 
-/* line 242, ../scss/style.scss */
+/* line 247, ../scss/style.scss */
 .top-half {
   top: 0;
   visibility: visible;
   box-shadow: 0 12px 0 #0D64AD inset;
 }
-/* line 246, ../scss/style.scss */
+/* line 251, ../scss/style.scss */
 .top-half img {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 251, ../scss/style.scss */
+/* line 256, ../scss/style.scss */
 .bottom-half {
   top: 50%;
   visibility: visible;
   box-shadow: 0 -12px 0 #E51F1B inset;
 }
 
-/* line 257, ../scss/style.scss */
+/* line 262, ../scss/style.scss */
 .roundAnnouncement {
   background-color: black;
   width: 100vw;
@@ -247,7 +245,7 @@ video#bgvid {
   z-index: 99999;
   text-align: center;
 }
-/* line 263, ../scss/style.scss */
+/* line 268, ../scss/style.scss */
 .roundAnnouncement span {
   left: 0;
   right: 0;
@@ -257,28 +255,28 @@ video#bgvid {
   text-align: center;
 }
 
-/* line 269, ../scss/style.scss */
+/* line 274, ../scss/style.scss */
 .correctColor {
   background-color: #00C997;
 }
 
-/* line 273, ../scss/style.scss */
+/* line 278, ../scss/style.scss */
 .incorrectColor {
   background-color: rgba(0, 0, 0, 0.98);
 }
 
-/* line 277, ../scss/style.scss */
+/* line 282, ../scss/style.scss */
 .redColor {
   color: #E51F1B;
 }
 
-/* line 282, ../scss/style.scss */
+/* line 287, ../scss/style.scss */
 .blueColor {
   color: #0D64AD;
 }
 
 /* ----- Countries title Style + Score ----- */
-/* line 289, ../scss/style.scss */
+/* line 294, ../scss/style.scss */
 .country-title {
   text-align: left;
   font-size: 5vw;
@@ -287,13 +285,13 @@ video#bgvid {
   display: inline-block;
   text-transform: capitalize;
 }
-/* line 296, ../scss/style.scss */
+/* line 301, ../scss/style.scss */
 .country-title:nth-child(1) {
   margin-left: 20px;
   margin-bottom: 60px;
   margin-top: 40px;
 }
-/* line 301, ../scss/style.scss */
+/* line 306, ../scss/style.scss */
 .country-title:nth-child(2) {
   margin-right: 20px;
   margin-bottom: 40px;
@@ -301,47 +299,47 @@ video#bgvid {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 309, ../scss/style.scss */
+/* line 314, ../scss/style.scss */
 .red-info {
   text-align: center;
 }
 
-/* line 313, ../scss/style.scss */
+/* line 318, ../scss/style.scss */
 .blue-info {
   text-align: center;
 }
 
-/* line 317, ../scss/style.scss */
+/* line 322, ../scss/style.scss */
 .score {
   color: #00C997;
   width: 30vw;
   font-size: 5vw;
   display: inline-block;
 }
-/* line 322, ../scss/style.scss */
+/* line 327, ../scss/style.scss */
 .score:nth-child(2) {
   text-align: right;
 }
-/* line 326, ../scss/style.scss */
+/* line 331, ../scss/style.scss */
 .score:nth-child(1) {
   transform: scaleY(-1) scaleX(-1);
   text-align: right;
 }
 
 /* ----- Countries thumbnails ----- */
-/* line 335, ../scss/style.scss */
+/* line 340, ../scss/style.scss */
 .grid {
   display: block;
   width: 870px;
   text-align: center;
   margin: 0 auto;
 }
-/* line 340, ../scss/style.scss */
+/* line 345, ../scss/style.scss */
 .grid:first-child {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* line 346, ../scss/style.scss */
+/* line 351, ../scss/style.scss */
 .selection-blocks {
   cursor: pointer;
   width: 200px;
@@ -352,7 +350,7 @@ video#bgvid {
   background-position: center;
 }
 
-/* line 356, ../scss/style.scss */
+/* line 361, ../scss/style.scss */
 .correct2 {
   background-color: red;
 }

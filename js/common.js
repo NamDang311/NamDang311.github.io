@@ -1,7 +1,7 @@
 /* jshint esversion:6 , browser: true */
 /*jshint -W030*/
 
-let maxRound = 5
+let maxRound = 5;
 let currentRound = 1;
 var blueScore = 0;
 var redScore = 0;
@@ -11,26 +11,26 @@ var blueIsSelected = false,
 /*Preload images*/
 var imgs = [];
 var preloadState = false;
-for (z=1;z<6;z++){ imgs.push("../images/red/correct/"+z+".gif")
-imgs.push("../images/red/incorrect/"+z+".gif")
-imgs.push("../images/blue/correct/"+z+".gif")
-imgs.push("../images/blue/incorrect/"+z+".gif");
-};
+for (var z = 1; z < 6; z++) {
+    imgs.push("../images/red/correct/" + z + ".gif");
+    imgs.push("../images/red/incorrect/" + z + ".gif");
+    imgs.push("../images/blue/correct/" + z + ".gif");
+    imgs.push("../images/blue/incorrect/" + z + ".gif");
+}
 
 $.preload(imgs, {
     all: function () {
         preloadState = true;
     }
-})
+});
 
 
 /** Check if video is loaded and remove block screen */
 window.addEventListener('load', function () {
-    var video = document.querySelector('#bgvid');
     var preloader = document.querySelector('.blockScreen');
 
     function checkLoad() {
-        if (video.readyState === 4 && preloadState === true) {
+        if (preloadState === true) {
             TweenMax.to(".blockScreen", 0.3, {
                 autoAlpha: 0,
                 delay: "1"
@@ -44,14 +44,10 @@ window.addEventListener('load', function () {
 
 /** Opening Splash Screen */
 $(document).ready(function () {
-    TweenMax.fromTo("#introTypo", 1, {
-        scale: 0,
-        y: "+=300px"
+    TweenMax.fromTo("#startButton", 1, {
+        opacity:0
     }, {
-        scale: 1,
-        y: "-=300px",
-        delay: "2",
-        ease: Power4.easeOut
+        opacity:1,repeat:-1,yoyo:true,repeatDelay:0.5
     });
 });
 
@@ -71,6 +67,7 @@ $("#startButton").on("click touchstart", function (event) {
 
 // First ready-go stage motion
 var readyGoText = new TimelineMax({});
+
 function setStage() {
     playSetSound();
     readyGoText.to("#readyTitle", 0.4, {
@@ -85,7 +82,7 @@ function setStage() {
             TweenMax.to(".readyStage", 0.3, {
                 autoAlpha: 0
             });
-            
+
             //run countdown 
             countdown.play();
         }
@@ -131,7 +128,7 @@ setInterval(function () {
 }, 1000);
 
 /** Countries Database */
-var countries = ["","tanzania", "mauritius", "estonia", "brunei", "uzbekistn","melilla"];
+var countries = ["", "tanzania", "mauritius", "estonia", "brunei", "uzbekistn", "melilla"];
 
 //Title
 $(".country-title").html(countries[currentRound]);
@@ -152,7 +149,7 @@ function loadRandomImg() {
     for (var i = 2; i < 5; i++) {
         $(".selection-blocks-" + i).css("background-image", "url(../images/flags/random/" + newArrImg[i] + ".png)");
     }
-};
+}
 loadRandomImg();
 
 
@@ -195,7 +192,7 @@ function checkSide(value, sideNumber) {
             countdown.pause();
             _.delay(setNextRound, 4000);
         }
-        
+
     } else { //If click incorrect option
         if (sideNumber < 3) { //On blue side
             showBlueBlock("incorrect");
@@ -208,7 +205,7 @@ function checkSide(value, sideNumber) {
 }
 
 function checkNumberOfWrong() {
-    if (numberOfWrong == 0) {
+    if (numberOfWrong === 0) {
         numberOfWrong++;
     } else {
         _.delay(setNextRound, 4000);
@@ -265,7 +262,7 @@ var roundDeclare = new TimelineMax({
 TweenMax.set(".roundAnnouncement", {
     autoAlpha: 0
 });
-roundDeclare.to(".roundAnnouncement", 0.4, {
+roundDeclare.to(".roundAnnouncement", 0, {
     autoAlpha: 1,
     onComplete: resetSideBlock
 }).from("#roundCall", 0.2, {
@@ -273,7 +270,7 @@ roundDeclare.to(".roundAnnouncement", 0.4, {
 }).to("#roundCall", 0.2, {
     y: "+=450%"
 }, "+=1").to(".roundAnnouncement", 0.4, {
-    autoAlpha: 0
+    autoAlpha: 0,onComplete: function (){countdown.play(0);}
 });
 
 var finishGame = new TimelineMax({
@@ -289,11 +286,17 @@ finishGame.to(".roundAnnouncement", 0.4, {
 }, "+=1.5");
 
 var countdown = new TimelineMax({
-    paused: true, repeat:-1, onComplete: setNextRound
+    paused: true,   
 });
-countdown.fromTo ("#countdown",10,{width:"0"},{width:"100%",ease:Power0.easeNone});
+countdown.fromTo("#countdown", 5, {
+    width: "0"
+}, {
+    width: "100%",
+    ease: Power0.easeNone, onComplete: setNextRound
+});
 
 function setNextRound() {
+    countdown.stop(0);
     if (currentRound === maxRound) {
         // if max round reached, declare winner
         if (redScore > blueScore) {
@@ -311,7 +314,6 @@ function setNextRound() {
         currentRound++;
         $("#roundCall").html("Round " + currentRound);
         roundDeclare.play(0);
-        countdown.play(0);
         currentimgName = countries[currentRound].replace(" ", "%20");
         $(".country-title").html(countries[currentRound]);
         loadCorrectImg();
