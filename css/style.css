@@ -2,7 +2,7 @@
 /* ----- Settings ----- */
 /* ----- General ----- */
 /* line 44, ../scss/style.scss */
-.align-mid, .splashScreen .sliding-wrap, .splashScreen #credit, button, #loadingContainer {
+.align-mid, .splashScreen .sliding-wrap, .splashScreen #credit, button {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -126,13 +126,6 @@ button:focus {
   font-size: 2em;
   margin: 80px auto 0 auto;
   color: white;
-}
-
-/* line 170, ../scss/style.scss */
-#loadingContainer {
-  visibility: visible;
-  bottom: 10%;
-  width: 50px;
 }
 
 /* ----- Staging ----- */
